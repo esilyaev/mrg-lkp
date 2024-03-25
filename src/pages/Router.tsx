@@ -4,6 +4,7 @@ import { Welcome } from "./Welcome";
 import { Contracts } from "./Contracts";
 import { Manage } from "./Manage";
 
+
 export const Router = () => {
   return (
     <BrowserRouter>
