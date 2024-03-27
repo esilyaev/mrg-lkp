@@ -10,6 +10,7 @@ export const MRFilterButton = () => {
       gap: '5px',
       padding: '10px 12px',
       color: '#fff',
+      
       outline: 'none',
       border: 'none',
       '&:hover': {
