@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import { GridRowsProp, GridColDef, DataGrid } from "@mui/x-data-grid";
+import { PropsComp } from "./PropsComp";
 
 const rows: GridRowsProp = [
   {
@@ -29,6 +30,9 @@ export const Manage = () => {
         <DataGrid rows={rows} columns={columns} />
       </div>
       <h1>Hello </h1>
+      <PropsComp title="Привет из пропсов" />
+      <PropsComp title="dfghjsdfghsajfs" />
+      <PropsComp title="dsfdfsdf" />
     </>
   );
 };
