@@ -51,8 +51,6 @@ return (
 		</div> */}
 		
 		<div className="manage__filter-panel">
-
-			
 			<Button className='manage__filter-button'
 			sx={{
 				background: "white",
@@ -86,7 +84,6 @@ return (
 			 variant="contained" >
 				График освоения
 			</Button>
-
 			<Button
 			sx={{
 				background: "white",
@@ -108,8 +105,6 @@ return (
 					color: '#FFFFFF',
 				},
 			  }}
-			  
-
 			  startIcon={
 				<WysiwygIcon
 				  sx={{
@@ -122,7 +117,6 @@ return (
 			 variant="contained" >
 				Объемы
 			</Button>
-
 			<Button
 			sx={{
 				background: "white",
@@ -144,8 +138,6 @@ return (
 					color: '#FFFFFF',
 				},
 			  }}
-			  
-
 			  startIcon={
 				<PaymentsOutlinedIcon
 				  sx={{
@@ -158,7 +150,6 @@ return (
 			 variant="contained" >
 				Стоимость
 			</Button>
-
 			<Button
 			sx={{
 				background: "white",
@@ -180,8 +171,6 @@ return (
 					color: '#FFFFFF',
 				},
 			  }}
-			  
-
 			  startIcon={
 				<PlaylistAddCheckIcon
 				  sx={{
@@ -194,7 +183,6 @@ return (
 			 variant="contained" >
 				Обязательства
 			</Button>
-
 			<Button
 			sx={{
 				background: "white",
@@ -216,8 +204,6 @@ return (
 					color: '#FFFFFF',
 				},
 			  }}
-			  
-
 			  startIcon={
 				<LibraryAddCheckOutlinedIcon
 				  sx={{
@@ -230,7 +216,6 @@ return (
 			 variant="contained" >
 				Доп. соглашения
 			</Button>
-
 			<Button
 			sx={{
 				background: "white",
@@ -252,8 +237,6 @@ return (
 					color: '#FFFFFF',
 				},
 			  }}
-			  
-
 			  startIcon={
 				<WorkOutlineOutlinedIcon
 				  sx={{
@@ -286,10 +269,6 @@ return (
 							padding: '0px 8px',
 							height: '40px'
 						},
-						
-						'& .MuiInputLabel-root': {
-							
-						},
 					}} />
 				</LocalizationProvider>
 			</div>
@@ -302,7 +281,6 @@ return (
 					textTransform: "none",
 					padding: "10px 24px",
 					height: "40px"
-
 				}}>
 					Сформировать КС
 				</Button>
@@ -313,7 +291,6 @@ return (
 					textTransform: "none",
 					padding: "10px 24px",
 					height: "40px"
-
 				}}>
 					Отправить факт за месяц
 				</Button>
