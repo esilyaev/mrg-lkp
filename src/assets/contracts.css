@@ -3,43 +3,9 @@
 }
 
 .contracts {
-  background: rgba(245, 245, 245, 1);
-  padding-left: 64px;
-  padding-top: 32px;
-  padding-bottom: 34px;
-}
+  /* background: rgba(245, 245, 245, 1); */
+  /* padding-left: 64px; */
 
-.contracts__container {
-  padding-left: 24px;
-  padding-right: 24px;
-  margin: 0 auto;
-}
-
-.contracts__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 32px;
-}
-
-.contracts__title {
-  font-size: 38px;
-}
-
-.contracts__dropdown {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  padding: 16px;
-  background: var(--white);
-  width: 720px;
-  border-radius: 5px;
-
-  font-size: 13px;
-  line-height: 16px;
-
-  color: rgba(156, 154, 165, 1);
 }
 
 .contracts__filter {
@@ -81,7 +47,7 @@
   outline: none;
   background: none;
 
-
+  
   width: 40px;
   height: 40px;
 
@@ -98,6 +64,12 @@
 .filter__buttons-item:last-child {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
+}
+
+.filter__buttons-item-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .grid-list {

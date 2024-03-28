@@ -1,22 +1,16 @@
-// import { MRButton } from "../comps/MRButton";
+// STYLES
 import "../assets/reset.css"
 import "../assets/common.css"
 import "../assets/contracts.css"
-
-import { Grid } from "@mui/material";
-// import AcUnitIcon from "@mui/icons-material/AcUnit";
+// COMPONENTS
 import { MRSidebar } from "../comps/MRSidebar";
 import { MRCard } from "../comps/MRCard";
 import { MRFilterButton } from "../comps/MRFilterButton";
-// import { MRSelect } from "../comps/MRSelect";
+// MUI
+import { Grid } from "@mui/material";
 import GridOnIcon from '@mui/icons-material/GridOn';
-
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
-
-
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-// import { PropsComp } from "../pages/PropsComp";
-
 import { GridRowsProp, GridColDef, DataGrid } from "@mui/x-data-grid";
 
 
@@ -204,17 +198,14 @@ export const Contracts = () => {
   return <>
 
     <MRSidebar />
-    <section className="contracts">
-      <div className="container contracts__container">
-        <div className="contracts__header">
+    <section className="contracts common-p">
+      <div className="container contracts__container common-container">
+        <div className="contracts__header common-header">
           <h1 className="contracts__title heading-1">Контракты</h1>
           <div className="contracts__dropdown dropdown">
             <span>Все проекты</span>
             <ArrowDropDownIcon />
           </div>
-
-          {/* <MRSelect /> */}
-
         </div>
         <div className="contracts__filter filter">
           <ul className="filter__list">
@@ -228,15 +219,15 @@ export const Contracts = () => {
             <li className="filter__list-item"><span>Закрыт</span></li>
           </ul>
           <div className="filter__buttons">
-            <button className="filter__buttons-item active">
-
-              <GridOnIcon />
-
+            <button className="filter__buttons-item active" >
+              <div className="filter__buttons-item-wrap">
+                <GridOnIcon />
+              </div>
             </button>
             <button className="filter__buttons-item">
-
-              <FormatListBulletedIcon />
-
+              <div className="filter__buttons-item-wrap">
+                <FormatListBulletedIcon />
+              </div>
             </button>
           </div>
         </div>
