@@ -18,7 +18,14 @@ const columns: GridColDef[] = [
   { field: "code", headerName: "Код работы", width: 150 },
   { field: "building", headerName: "Корпус", width: 150 },
   { field: "level", headerName: "Этаж", width: 150 },
-  { field: "name", headerName: "Наименование", width: 150 },
+  {
+    field: "name",
+    headerName: "Наименование",
+    width: 150,
+    renderCell: (params) => {
+      return <span>{params.value}</span>;
+    },
+  },
 ];
 
 export const Manage = () => {
