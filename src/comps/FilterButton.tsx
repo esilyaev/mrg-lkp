@@ -1,12 +1,6 @@
 import Button from '@mui/material/Button';
-import TimelineIcon from '@mui/icons-material/Timeline';
-// import WysiwygIcon from '@mui/icons-material/Wysiwyg';
-// import PaymentsOutlinedIcon from '@mui/icons-material/PaymentsOutlined';
-// import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
-// import LibraryAddCheckOutlinedIcon from '@mui/icons-material/LibraryAddCheckOutlined';
-// import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
-<TimelineIcon />
-export const FilterButton = (props: { title: string, startIcon: React.ReactNode }) => {
+
+export const ManageFilterButton = (props: { title: string, startIcon: React.ReactNode }) => {
   return (
     <Button
       sx={{
@@ -28,6 +22,11 @@ export const FilterButton = (props: { title: string, startIcon: React.ReactNode 
 			boxShadow: 'none',
 			color: '#FFFFFF',
 		},
+		".MuiButton-icon svg": {
+			color: "primary.main", 
+			width: '16px', 
+			height: '16px'
+		}
       }}
       startIcon={props.startIcon}
       variant="contained">

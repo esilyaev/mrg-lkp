@@ -4,10 +4,16 @@ import '../assets/reset.css'
 import '../assets/manage.css'
 // Components
 import { MRSidebar } from "../comps/MRSidebar";
-import { FilterButton } from "../comps/FilterButton";
+import { ManageFilterButton } from "../comps/FilterButton";
+import Button from '@mui/material/Button';
 
 // Filter
-import Button from '@mui/material/Button';
+import TimelineIcon from '@mui/icons-material/Timeline';
+import WysiwygIcon from '@mui/icons-material/Wysiwyg';
+import PaymentsOutlinedIcon from '@mui/icons-material/PaymentsOutlined';
+import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
+import LibraryAddCheckOutlinedIcon from '@mui/icons-material/LibraryAddCheckOutlined';
+import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
 
 // Date Picker
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -42,8 +48,14 @@ return (
 <section className='manage'>
 	<div className="container manage__container">
 
-		<FilterButton title='Объемы' startIcon="<TimelineIcon />" />
-		
+		<div className="manage__filter-panel">
+			<ManageFilterButton title="График освоения" startIcon={<TimelineIcon />} />
+			<ManageFilterButton title="Объемы" startIcon={<WysiwygIcon />} />
+			<ManageFilterButton title="Стоимость" startIcon={<PaymentsOutlinedIcon />} />
+			<ManageFilterButton title="Обязательства" startIcon={<PlaylistAddCheckIcon />} />
+			<ManageFilterButton title="Доп. соглашения" startIcon={<LibraryAddCheckOutlinedIcon />} />
+			<ManageFilterButton title="Информация о контракте" startIcon={<WorkOutlineOutlinedIcon />} />
+		</div>
 		<div className="manage__filter-panel">
 			{/* <Button className='manage__filter-button'
 			sx={{
