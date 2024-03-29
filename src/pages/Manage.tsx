@@ -4,16 +4,10 @@ import '../assets/reset.css'
 import '../assets/manage.css'
 // Components
 import { MRSidebar } from "../comps/MRSidebar";
+import { FilterButton } from "../comps/FilterButton";
 
 // Filter
 import Button from '@mui/material/Button';
-import TimelineIcon from '@mui/icons-material/Timeline';
-import WysiwygIcon from '@mui/icons-material/Wysiwyg';
-import PaymentsOutlinedIcon from '@mui/icons-material/PaymentsOutlined';
-import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
-import LibraryAddCheckOutlinedIcon from '@mui/icons-material/LibraryAddCheckOutlined';
-import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
-
 
 // Date Picker
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -47,12 +41,11 @@ return (
 <MRSidebar />
 <section className='manage'>
 	<div className="container manage__container">
-		{/* <div className="manage__header">
-			<div className="title">Управление контрактом</div>
-		</div> */}
+
+		<FilterButton title='Объемы' startIcon="<TimelineIcon />" />
 		
 		<div className="manage__filter-panel">
-			<Button className='manage__filter-button'
+			{/* <Button className='manage__filter-button'
 			sx={{
 				background: "white",
 				fontSize: "13px",
@@ -249,7 +242,7 @@ return (
 			  }
 			 variant="contained" >
 				Информация о контракте
-			</Button>
+			</Button> */}
 		</div>
 		<div className="manage__datepicker_contaienr">
 			<div className="manage__datepicker">
