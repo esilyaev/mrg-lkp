@@ -1,6 +1,3 @@
-// STYLES
-import "../assets/reset.css"
-import "../assets/common.css"
 import "../assets/notfound.css"
 // COMPONENTS
 import { MRSidebar } from "../comps/MRSidebar";

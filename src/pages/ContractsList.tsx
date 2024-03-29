@@ -67,27 +67,28 @@ const columns: GridColDef[] = [
   },
 ];
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const ContractsList = (props: { viewType: ViewType; rows: any[] }) => {
   if (props.viewType === ViewType.CARD) {
     return (
       <Grid container spacing={2} className="contracts__grid-list grid-list">
         <Grid item xs={4} className="grid-list__card card">
-          <MRCard status="Контроль" title="Привет" subtitle="Мир" summa="1 000 000.00"/>
+          <MRCard status="Контроль" title="Привет" subtitle="Мир" summa="1 000 000.00" remain="0" />
         </Grid>
         <Grid item xs={4} className="grid-list__card card">
-          <MRCard status="Закрыт" title="Привет" subtitle="Мир" summa="1 000 000.00"/>
+          <MRCard status="Закрыт" title="Привет" subtitle="Мир" summa="1 000 000.00" remain="0" />
         </Grid>
         <Grid item xs={4} className="grid-list__card card">
-          <MRCard status="Согласование" title="Привет" subtitle="Мир" summa="1 000 000.00"/>
+          <MRCard status="Согласование" title="Привет" subtitle="Мир" summa="1 000 000.00" remain="0" />
         </Grid>
         <Grid item xs={4} className="grid-list__card card">
-          <MRCard status="Контроль" title="Привет" subtitle="Мир" summa="1 000 000.00"/>
+          <MRCard status="Контроль" title="Привет" subtitle="Мир" summa="1 000 000.00" remain="0" />
         </Grid>
         <Grid item xs={4} className="grid-list__card card">
-          <MRCard status="Закрыт" title="Привет" subtitle="Мир" summa="1 000 000.00"/>
+          <MRCard status="Закрыт" title="Привет" subtitle="Мир" summa="1 000 000.00" remain="0" />
         </Grid>
         <Grid item xs={4} className="grid-list__card card">
-          <MRCard status="Согласование" title="Привет" subtitle="Мир" summa="1 000 000.00"/>
+          <MRCard status="Согласование" title="Привет" subtitle="Мир" summa="1 000 000.00" remain="0" />
         </Grid>
       </Grid>
     );

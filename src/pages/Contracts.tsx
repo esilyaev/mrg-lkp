@@ -1,7 +1,3 @@
-// STYLES
-import "../assets/reset.css";
-import "../assets/common.css";
-import "../assets/contracts.css";
 // COMPONENTS
 import { MRSidebar } from "../comps/MRSidebar";
 import { MRFilterButton } from "../comps/MRFilterButton";
@@ -9,10 +5,12 @@ import { MRFilterButton } from "../comps/MRFilterButton";
 import Box from '@mui/material/Box';
 import GridOnIcon from "@mui/icons-material/GridOn";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+
 import { rows } from "./mockContracts";
 import { useMemo, useState } from "react";
 import { ContractsList } from "./ContractsList";
+import { Button } from "@mui/material";
+import { MRHeader } from "../comps/MRHeader";
 // import { useNavigate } from "react-router";
 
 export enum ViewType {
@@ -52,21 +50,11 @@ export const Contracts = () => {
   return (
     <>
       <MRSidebar />
-      <section className="contracts common-p">
-        <div className="container contracts__container common-container">
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              marginBottom: '32px',
-            }}>
-            <h1 className="contracts__title heading-1">Контракты</h1>
-            <div className="contracts__dropdown dropdown">
-              <span>Все проекты</span>
-              <ArrowDropDownIcon />
-            </div>
-          </Box>
+      <section>
+        <Box>
+
+
+          <MRHeader title="Контракты" select="Все проекты" />
 
           <Box
             sx={{
@@ -85,70 +73,139 @@ export const Contracts = () => {
                 borderRadius: '6px',
               }}
             >
-              <li
-                className="filter__list-item active"
+
+              <Box
+                sx={{
+                  color: '#fff',
+                  background: 'rgba(42, 41, 46, 1)',
+                  borderRadius: '6px 0px 0px 6px',
+                  minWidth: '124px',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '5px',
+                  borderRight: '1px solid rgba(245, 245, 245, 1)',
+                }}
                 onClick={() => {
                   setFilter(ContractsFilter.ALL);
                 }}
               >
                 <MRFilterButton name="Все проекты" />
-              </li>
-              <li
-                className="filter__list-item"
+              </Box>
+              <Box
+                sx={{
+                  color: 'rgba(156, 154, 165, 1)',
+                  minWidth: '124px',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '5px',
+                  borderRight: '1px solid rgba(245, 245, 245, 1)',
+                }}
                 onClick={() => {
                   setFilter(ContractsFilter.REVIEW);
                 }}
               >
                 <MRFilterButton name="Согласование" />
-              </li>
-              <li
-                className="filter__list-item"
+              </Box>
+              <Box
+                sx={{
+                  color: 'rgba(156, 154, 165, 1)',
+                  minWidth: '124px',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '5px',
+                  borderRight: '1px solid rgba(245, 245, 245, 1)',
+                }}
                 onClick={() => {
                   setFilter(ContractsFilter.CONTROL);
                 }}
               >
                 <MRFilterButton name="Контроль" />
-              </li>
-              <li
-                className="filter__list-item"
+              </Box>
+              <Box
+                sx={{
+                  color: 'rgba(156, 154, 165, 1)',
+                  minWidth: '124px',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '5px',
+                }}
                 onClick={() => {
                   setFilter(ContractsFilter.CLOSE);
                 }}
               >
                 <MRFilterButton name="Закрыт" />
-
-              </li>
+              </Box>
             </Box>
 
-            <div className="filter__buttons">
-              <button
-                className="filter__buttons-item active"
+            <div>
+
+              <Button
+                sx={{
+                  background: '#fff',
+                  borderRadius: '6px 0 0 6px',
+                  minWidth: '40px',
+                  width: '40px',
+                  height: '40px',
+                }}
                 onClick={() => setView(ViewType.CARD)}
-
               >
-                <Box>
-                  <GridOnIcon />
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <GridOnIcon
+                    sx={{
+                      fill: '#000',
+                      width: '20px',
+                    }}
+                  />
                 </Box>
+              </Button>
 
-              </button>
-              <button
-                className="filter__buttons-item"
+
+              <Button
+                sx={{
+                  background: '#fff',
+                  borderRadius: '0 6px 6px 0',
+                  minWidth: '40px',
+                  width: '40px',
+                  height: '40px',
+                }}
                 onClick={() => setView(ViewType.TABLE)}
-
               >
-
-                <Box>
-                  <FormatListBulletedIcon />
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <FormatListBulletedIcon
+                    sx={{
+                      fill: '#000',
+                      width: '20px',
+                    }}
+                  />
                 </Box>
 
-
-              </button>
+              </Button>
             </div>
 
           </Box>
 
           <ContractsList viewType={view} rows={filteredContracts} />
-        </div>
+        </Box>
         {/* <button onClick={() => navigate("/")}>На главную</button> */}
       </section>
 

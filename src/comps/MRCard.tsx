@@ -4,7 +4,7 @@ import StarIcon from '@mui/icons-material/Star';
 import { IconButton, Typography } from "@mui/material";
 import Box from '@mui/material/Box';
 
-export const MRCard = (props: { status: string, title: string, subtitle: string, summa: number, }) => (
+export const MRCard = (props: { status: string, title: string, subtitle: string, summa: string, remain: string, }) => (
   <>
 
     <Box
@@ -102,7 +102,14 @@ export const MRCard = (props: { status: string, title: string, subtitle: string,
                   lineHeight: '20px',
                   color: 'rgba(42, 41, 46, 1)',
                 }}>Сумма</Box>
-              <span className="digit">{props.summa}</span>
+              <Box
+                sx={{
+                  color: 'rgba(107, 106, 114, 1)',
+                }}
+              >
+                <span>{props.summa}</span>
+              </Box>
+
             </Box>
             <Box sx={{}}></Box>
             <Box sx={{
@@ -117,7 +124,13 @@ export const MRCard = (props: { status: string, title: string, subtitle: string,
                   lineHeight: '20px',
                   color: 'rgba(42, 41, 46, 1)',
                 }}>Остаток</Box>
-              <span className="digit">0</span>
+              <Box
+                sx={{
+                  color: 'rgba(107, 106, 114, 1)',
+                }}
+              >
+                <span>{props.remain}</span>
+              </Box>
             </Box>
             <Box sx={{
               display: 'flex',
@@ -131,7 +144,13 @@ export const MRCard = (props: { status: string, title: string, subtitle: string,
                   lineHeight: '20px',
                   color: 'rgba(42, 41, 46, 1)',
                 }}>Дата</Box>
-              <span className="digit">12 июня 2023</span>
+              <Box
+                sx={{
+                  color: 'rgba(107, 106, 114, 1)',
+                }}
+              >
+                <span>12 июня 2023</span>
+              </Box>
             </Box>
 
 

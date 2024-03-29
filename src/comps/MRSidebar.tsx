@@ -1,5 +1,5 @@
 import "../assets/sidebar.css"
-
+import "../assets/reset.css"
 
 import HomeIcon from '@mui/icons-material/Home';
 import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
@@ -15,9 +15,20 @@ import { Button } from "@mui/material";
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import PersonIcon from '@mui/icons-material/Person';
 
-
-
-
+export const SidebarButton = (props: { icon: React.ReactNode }) => {
+  return <li className="sidebar__list-item">
+    <Button onClick={function () { }}
+      sx={{
+        minWidth: '48px',
+        height: '100%',
+        ".MuiSvgIcon-root": {
+          fill: 'rgba(190, 187, 201, 1)',
+        }
+      }}>
+      {props.icon}
+    </Button>
+  </li>;
+};
 
 export const MRSidebar = () => {
   return (
@@ -31,118 +42,12 @@ export const MRSidebar = () => {
           </a>
 
           <ul className="sidebar__list">
-
-            <li className="sidebar__list-item">
-
-              <Button
-                onClick={function () { }}
-                sx={{
-                  minWidth: '48px',
-                  height: '100%',
-                }}
-              >
-                <HomeIcon
-                  sx={{
-                    fill: 'rgba(117, 75, 233, 1)',
-                  }}
-                />
-              </Button>
-
-            </li>
-            <li className="sidebar__list-item">
-
-              <Button
-                onClick={function () { }}
-                sx={{
-                  minWidth: '48px',
-                  height: '100%',
-                }}
-              >
-                <MapsHomeWorkIcon
-                  sx={{
-                    fill: 'rgba(117, 75, 233, 1)',
-                  }}
-                />
-              </Button>
-
-
-
-            </li>
-            <li className="sidebar__list-item">
-
-              <Button
-                onClick={function () { }}
-                sx={{
-                  minWidth: '48px',
-                  height: '100%',
-                }}
-              >
-                <LabelIcon
-                  sx={{
-                    fill: 'rgba(117, 75, 233, 1)',
-                  }}
-                />
-              </Button>
-
-            </li>
-            <li className="sidebar__list-item">
-
-              <Button
-                onClick={function () { }}
-                sx={{
-                  minWidth: '48px',
-                  height: '100%',
-                }}
-              >
-                <AssignmentIcon
-                  sx={{
-                    fill: 'rgba(117, 75, 233, 1)',
-                  }}
-                />
-              </Button>
-
-
-
-            </li>
-            <li className="sidebar__list-item">
-
-              <Button
-                onClick={function () { }}
-                sx={{
-                  minWidth: '48px',
-                  height: '100%',
-                }}
-              >
-                <SpaceDashboardIcon
-                  sx={{
-                    fill: 'rgba(117, 75, 233, 1)',
-                  }}
-                />
-              </Button>
-
-
-
-            </li>
-            <li className="sidebar__list-item">
-
-              <Button
-                onClick={function () { }}
-                sx={{
-                  minWidth: '48px',
-                  height: '100%',
-                }}
-              >
-                <InboxIcon
-                  sx={{
-                    fill: 'rgba(117, 75, 233, 1)',
-                  }}
-                />
-              </Button>
-
-
-
-            </li>
-
+            <SidebarButton icon={<HomeIcon />} />
+            <SidebarButton icon={<MapsHomeWorkIcon />} />
+            <SidebarButton icon={<LabelIcon />} />
+            <SidebarButton icon={<AssignmentIcon />} />
+            <SidebarButton icon={<SpaceDashboardIcon />} />
+            <SidebarButton icon={<InboxIcon />} />
           </ul>
         </div>
 
@@ -158,7 +63,9 @@ export const MRSidebar = () => {
             >
               <NotificationsIcon
                 sx={{
-                  fill: 'rgba(117, 75, 233, 1)',
+                  fill: 'rgba(9,7,20, 1)',
+                  width: '32px',
+                  height: '32px',
                 }}
               />
             </Button>
@@ -166,7 +73,7 @@ export const MRSidebar = () => {
 
           <div className="sidebar__profile">
 
-          <Button
+            <Button
               onClick={function () { }}
               sx={{
                 minWidth: '40px',
