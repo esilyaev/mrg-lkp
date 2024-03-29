@@ -2,6 +2,9 @@ import { DataGrid, GridColDef, GridRowsProp, gridClasses } from '@mui/x-data-gri
 
 import '../assets/reset.css'
 import '../assets/manage.css'
+// Components
+import { MRSidebar } from "../comps/MRSidebar";
+
 // Filter
 import Button from '@mui/material/Button';
 import TimelineIcon from '@mui/icons-material/Timeline';
@@ -10,15 +13,12 @@ import PaymentsOutlinedIcon from '@mui/icons-material/PaymentsOutlined';
 import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 import LibraryAddCheckOutlinedIcon from '@mui/icons-material/LibraryAddCheckOutlined';
 import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
-// Filter
+
 
 // Date Picker
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-// Date Picker
-
-// import { MRButton } from '../comps/MRButton.tsx';
 
 
 const columns: GridColDef[] = [
@@ -44,6 +44,7 @@ const rows: GridRowsProp = [
 export const Manage = () => {
 return (
 <>
+<MRSidebar />
 <section className='manage'>
 	<div className="container manage__container">
 		{/* <div className="manage__header">
