@@ -72,9 +72,9 @@
   justify-content: center;
 }
 
-.grid-list {
+/* .grid-list {
   display: none !important;
-}
+} */
 
 .card__wrap {
   background: rgba(255, 255, 255, 1);
