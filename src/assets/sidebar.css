@@ -18,6 +18,11 @@
   padding: 10px 0px;
 }
 
+.sidebar__logo {
+	display: block;
+	margin: 24px 0px;
+}
+
 .sidebar__list {
   margin-top: 24px;
 }
@@ -30,9 +35,6 @@
 
 .sidebar__list-item,
 .sidebar__notification {
-
-  /* padding: 10px; */
-  background: rgb(219, 219, 219);
   border-radius: 5px;
   width: 48px;
   height: 48px;
@@ -41,8 +43,16 @@
   align-items: center;
 }
 
+.sidebar__list-item:hover {
+	background-color: #f5f5f5;
+}
+
+.sidebar__list-item:hover .MuiSvgIcon-root {
+	fill: rgba(117, 75, 233, 1);
+}
+
 .sidebar__list-item:not(:last-child) {
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 
