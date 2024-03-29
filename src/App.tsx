@@ -14,7 +14,7 @@ const theme = createTheme({
 function App() {
   return (
     <>
-    <CssBaseline/>
+      <CssBaseline />
       <ThemeProvider theme={theme}>
         <Router />
       </ThemeProvider>

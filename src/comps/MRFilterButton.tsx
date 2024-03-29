@@ -1,8 +1,7 @@
 import DoneIcon from '@mui/icons-material/Done';
 import { Button } from "@mui/material";
-import { PropsComp } from "../pages/PropsComp";
 
-export const MRFilterButton = () => {
+export const MRFilterButton = (props: { name: string }) => {
   return (
     <Button
       variant="outlined"
@@ -10,21 +9,21 @@ export const MRFilterButton = () => {
         display: 'flex',
         gap: '5px',
         padding: '10px 12px',
-        color: '#fff',
+        color: '#cacaca',
 
         outline: 'none',
         border: 'none',
         '&:hover': {
-          background: 'rgb(27, 26, 29)',
+          // background: 'rgb(27, 26, 29)',
           outline: 'none',
           border: 'none',
         },
       }}
     >
       <DoneIcon />
-      <span>
-        <PropsComp title="Все проекты" />
-      </span>
+
+      <span>{props.name}</span>
+
     </Button>
   );
 };
