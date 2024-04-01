@@ -1,38 +1,78 @@
-import "../assets/notfound.css"
+import { Box, Typography } from "@mui/material";
+import { MRHeader } from "../comps/MRHeader";
 // COMPONENTS
 import { MRSidebar } from "../comps/MRSidebar";
 // MUI
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+
 
 export const NotFound = () => {
   return (
     <>
       <MRSidebar />
-      <section className="notfound common-p">
-        <div className="container notfound__container common-container">
-          <div className="notfound__header common-header">
-            <h1 className="notfound__title heading-1">Страница не найдена</h1>
-            <div className="notfound__dropdown dropdown">
-              <span>Все проекты</span>
-              <ArrowDropDownIcon />
-            </div>
+      <section>
+        <Box
+          sx={{
+            position: 'relative',
+          }}
+        >
+          <MRHeader title="Страница не найдена" select="Все проекты" />
+
+          <Box
+            sx={{
+              position: 'relative',
+              background: 'rgba(239, 238, 255, 1)',
+              padding: '16px 0 16px 40px',
+              borderRadius: '5px',
+              borderLeft: '5px solid rgba(180, 180, 249, 1)',
+              '&::before': {
+                content: '"i"',
+                position: 'absolute',
+                width: '20px',
+                height: '20px',
+                background: 'rgba(117, 75, 233, 1)',
+                top: '15px',
+                left: '12px',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#fff',
+                fontSize: '11px',
+                fontWeight: '700',
+              },
 
 
-          </div>
-
-          <div className="notfound__descr">
-
-            <h2 className="notfound__subtitle heading-2">
+            }}
+          >
+            <Typography variant="h2"
+              sx={{
+                fontSize: '16px',
+                lineHeight: '24px',
+                fontWeight: '500',
+              }}
+            >
               В разработке
-            </h2>
-            <p className="notfound__txt">Страница временно недоступна</p>
-          </div>
+            </Typography>
 
-          <div className="notfound__img">
-            <img src="/public/img/notfound.svg" alt="##" />
-          </div>
+            <Typography variant="body1"
+              sx={{
+                fontSize: '14px',
+                lineHeight: '20px',
+              }}
+            >Страница временно недоступна</Typography>
+          </Box>
 
-        </div>
+          <Box
+            sx={{
+              marginTop: '150px',
+              display: 'flex',
+              justifyContent: 'center',
+            }}
+          >
+            <img src="/public/img/notfound.svg" alt="Не найдено" />
+          </Box>
+
+        </Box>
 
 
       </section>

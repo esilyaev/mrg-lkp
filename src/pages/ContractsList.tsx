@@ -73,32 +73,29 @@ export const ContractsList = (props: { viewType: ViewType; rows: any[] }) => {
     return (
       <Grid container spacing={2} className="contracts__grid-list grid-list">
         <Grid item xs={4} className="grid-list__card card">
-          <MRCard status="Контроль" title="Привет" subtitle="Мир" summa="1 000 000.00" remain="0" />
+          <MRCard status="Контроль" title="Slava 4 оч." subtitle="Договор генподряда №111" summa="1 000 000.00" remain="0" date="12 июня 2023" />
         </Grid>
         <Grid item xs={4} className="grid-list__card card">
-          <MRCard status="Закрыт" title="Привет" subtitle="Мир" summa="1 000 000.00" remain="0" />
+          <MRCard status="Закрыт" title="Slava 1 оч." subtitle="Договор генподряда №222" summa="1 000 000.00" remain="0" date="12 июня 2023" />
         </Grid>
         <Grid item xs={4} className="grid-list__card card">
-          <MRCard status="Согласование" title="Привет" subtitle="Мир" summa="1 000 000.00" remain="0" />
+          <MRCard status="Согласование" title="Slava 3 оч." subtitle="Договор генподряда №333" summa="1 000 000.00" remain="0" date="12 июня 2023" />
         </Grid>
         <Grid item xs={4} className="grid-list__card card">
-          <MRCard status="Контроль" title="Привет" subtitle="Мир" summa="1 000 000.00" remain="0" />
+          <MRCard status="Контроль" title="Slava 6 оч." subtitle="Договор генподряда №444" summa="1 000 000.00" remain="0" date="12 июня 2023" />
         </Grid>
         <Grid item xs={4} className="grid-list__card card">
-          <MRCard status="Закрыт" title="Привет" subtitle="Мир" summa="1 000 000.00" remain="0" />
+          <MRCard status="Закрыт" title="Slava 8 оч." subtitle="Договор генподряда №555" summa="1 000 000.00" remain="0" date="12 июня 2023" />
         </Grid>
         <Grid item xs={4} className="grid-list__card card">
-          <MRCard status="Согласование" title="Привет" subtitle="Мир" summa="1 000 000.00" remain="0" />
+          <MRCard status="Согласование" title="Slava 10 оч." subtitle="Договор генподряда №777" summa="1 000 000.00" remain="0" date="12 июня 2023" />
         </Grid>
       </Grid>
     );
   } else {
     return (
       <DataGrid
-        sx={{
-          // width: '100%',
-          // background: "",
-        }}
+        sx={{}}
         rows={props.rows}
         columns={columns}
       />

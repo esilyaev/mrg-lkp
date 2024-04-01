@@ -26,8 +26,8 @@ enum ContractsFilter {
 }
 
 export const Contracts = () => {
-  const [filter, setFilter] = useState(ContractsFilter.CLOSE);
-  const [view, setView] = useState(ViewType.TABLE);
+  const [filter, setFilter] = useState(ContractsFilter.ALL);
+  const [view, setView] = useState(ViewType.CARD);
   // const navigate = useNavigate();
   const filteredContracts = useMemo(() => {
     switch (filter) {

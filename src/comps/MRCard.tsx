@@ -4,7 +4,7 @@ import StarIcon from '@mui/icons-material/Star';
 import { IconButton, Typography } from "@mui/material";
 import Box from '@mui/material/Box';
 
-export const MRCard = (props: { status: string, title: string, subtitle: string, summa: string, remain: string, }) => (
+export const MRCard = (props: { status: string, title: string, subtitle: string, summa: number, remain: number, date: string, }) => (
   <>
 
     <Box
@@ -149,7 +149,7 @@ export const MRCard = (props: { status: string, title: string, subtitle: string,
                   color: 'rgba(107, 106, 114, 1)',
                 }}
               >
-                <span>12 июня 2023</span>
+                <span>{props.date}</span>
               </Box>
             </Box>
 
