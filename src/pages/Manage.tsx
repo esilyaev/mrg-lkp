@@ -26,6 +26,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 
 const columns: GridColDef[] = [
+
 	{ field: 'group', headerName: 'Группа', width: 120, headerClassName: 'table-headerName table-headerName__first' },
 	{ field: 'work_code', headerName: 'Код работы', width: 120, headerClassName: 'table-headerName' },
 	{ field: 'pavilion', headerName: 'Корпус', width: 100, headerClassName: 'table-headerName' },
@@ -44,6 +45,7 @@ const rows: GridRowsProp = [
 	{ id: 5, group: ' ', work_code: '3.2.2.1', pavilion: '10', floor: '5 этаж', name: 'Устройство монолитных стен из бетона марки В40', total: '100', fact_month: '...' },
 	{ id: 6, group: ' ', work_code: '3.2.2.1', pavilion: '10', floor: '5 этаж', name: 'Устройство монолитных стен из бетона марки В40', total: '100', fact_month: '...' },
 	{ id: 7, group: ' ', work_code: '3.2.2.1', pavilion: '10', floor: '5 этаж', name: 'Устройство монолитных стен из бетона марки В40', total: '100', fact_month: '...' },
+
 
 ];
 import { rows } from "./mockManage";
