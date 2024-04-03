@@ -7,9 +7,6 @@
 	font-family: 'Grtsk Giga';
 }
 
-
-
-
 .DataGridStyle {
 	background-color: #fff;
 	border: 0px!important;
@@ -40,8 +37,6 @@
 	width: 600px;
 }
 
-
-
 .manage__buttom_container {
 	justify-content: flex-end;
 	width: 500px;
@@ -54,4 +49,31 @@
 
 .manage__datepicker .MuiFormLabel-filled {
 	transform: translate(14px, -10px) scale(0.75);
+
+.manage__datepicker .MuiSvgIcon-root {
+	fill: #5134a3;
+	width: 16px;
+	height: 16px;
+}
+
+.DataGridStyle {
+	background-color: #fff;
+	border: 0px!important;
+	box-shadow: 0px 12px 16px -4px rgba(21, 21, 21, 0.05);
+	margin: 0px auto;
+}
+
+.manage .DataGridStyle .MuiDataGrid-filler, .MuiDataGrid-scrollbarFiller {
+	background-color: #eaebed;
+}
+
+.table-headerName {
+	background-color: #EAEBED;
+	color: #090714;
+	font-size: 12px;
+}
+
+.MuiDataGrid-row [data-field*="fact_month"] {
+	box-shadow: -5px 0 10px 0 rgba(0, 0, 0, 0.05);
+
 }
