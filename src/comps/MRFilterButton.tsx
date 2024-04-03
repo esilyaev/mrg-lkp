@@ -25,5 +25,6 @@ export const MRFilterButton = (props: { name: string }) => {
       <span>{props.name}</span>
 
     </Button>
+
   );
 };

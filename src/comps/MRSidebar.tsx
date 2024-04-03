@@ -1,3 +1,4 @@
+
 import HomeIcon from '@mui/icons-material/Home';
 import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
 import LabelIcon from '@mui/icons-material/Label';
@@ -6,13 +7,16 @@ import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard';
 import InboxIcon from '@mui/icons-material/Inbox';
 
 
+
 // import AcUnitIcon from "@mui/icons-material/AcUnit";
 import { Box, Button, List, ListItem } from "@mui/material";
+
 
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import PersonIcon from '@mui/icons-material/Person';
 
 export const SidebarButton = (props: { icon: React.ReactNode }) => {
+
   return <ListItem
     sx={{
       width: '48px',
@@ -42,6 +46,7 @@ export const SidebarButton = (props: { icon: React.ReactNode }) => {
 };
 
 
+
 export const MRSidebar = () => {
   return (
     <>
@@ -65,6 +70,7 @@ export const MRSidebar = () => {
           transition: '.2s',
         }}
       >
+
 
         <div className="sidebar__top">
           <a className="sidebar__logo" href="##">
@@ -104,6 +110,7 @@ export const MRSidebar = () => {
             }}
           >
 
+
             <Button
               onClick={function () { }}
               sx={{
@@ -114,6 +121,7 @@ export const MRSidebar = () => {
               <NotificationsIcon
                 sx={{
                   fill: 'rgba(9,7,20, 1)',
+
                   width: '32px',
                   height: '32px',
                 }}
@@ -129,6 +137,7 @@ export const MRSidebar = () => {
 
 
             <Button
+
               onClick={function () { }}
               sx={{
                 minWidth: '40px',
