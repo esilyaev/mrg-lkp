@@ -9,6 +9,7 @@ import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard';
 import InboxIcon from '@mui/icons-material/Inbox';
 
 
+
 // import AcUnitIcon from "@mui/icons-material/AcUnit";
 import { Button } from "@mui/material";
 
@@ -30,11 +31,13 @@ export const SidebarButton = (props: { icon: React.ReactNode }) => {
 	</li>;
   };
   
+
 export const MRSidebar = () => {
   return (
     <>
 
       <div className="sidebar">
+
 
         <div className="sidebar__top">
           <a className="sidebar__logo" href="##">
@@ -88,15 +91,11 @@ export const MRSidebar = () => {
                 }}
               />
             </Button>
-
-          </div>
-
-
-
+         </div>
         </div>
-
       </div>
 
     </>
   );
+
 };
