@@ -10,8 +10,10 @@ import { Box, Button, List, ListItem } from '@mui/material'
 
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import PersonIcon from '@mui/icons-material/Person'
+import { GoToManage } from 'shared/lib/navigation'
+import { useNavigate } from 'react-router-dom'
 
-export const SidebarButton = (props: { icon: React.ReactNode }) => {
+export const SidebarButton = (props: { icon: React.ReactNode; nav: () => void }) => {
   return (
     <ListItem
       sx={{
@@ -29,7 +31,7 @@ export const SidebarButton = (props: { icon: React.ReactNode }) => {
       }}
     >
       <Button
-        onClick={function () {}}
+        onClick={props.nav}
         sx={{
           minWidth: '48px',
           height: '100%',
@@ -45,6 +47,7 @@ export const SidebarButton = (props: { icon: React.ReactNode }) => {
 }
 
 export const MRSidebar = () => {
+  const navigate = useNavigate()
   return (
     <>
       <Box
@@ -76,12 +79,22 @@ export const MRSidebar = () => {
               marginTop: '24px',
             }}
           >
-            <SidebarButton icon={<HomeIcon />} />
-            <SidebarButton icon={<MapsHomeWorkIcon />} />
-            <SidebarButton icon={<LabelIcon />} />
-            <SidebarButton icon={<AssignmentIcon />} />
-            <SidebarButton icon={<SpaceDashboardIcon />} />
-            <SidebarButton icon={<InboxIcon />} />
+            <SidebarButton
+              icon={<HomeIcon />}
+              nav={() => {
+                navigate('/manage')
+              }}
+            />
+            <SidebarButton
+              icon={<MapsHomeWorkIcon />}
+              nav={() => {
+                navigate('/contracts')
+              }}
+            />
+            <SidebarButton icon={<LabelIcon />} nav={() => {}} />
+            <SidebarButton icon={<AssignmentIcon />} nav={() => {}} />
+            <SidebarButton icon={<SpaceDashboardIcon />} nav={() => {}} />
+            <SidebarButton icon={<InboxIcon />} nav={() => {}} />
           </List>
         </div>
 

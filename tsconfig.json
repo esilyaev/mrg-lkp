@@ -18,7 +18,22 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    // My settings
+    "baseUrl": "./src",
+    "paths": {
+      "app/*": ["app/*"],
+      "assets/*": ["assets/*"],
+      "entities/*": ["entities/*"],
+      "features/*": ["features/*"],
+      "layouts": ["layouts"],
+      "pages": ["pages"],
+      "processes/*": ["processes/*"],
+      "shared/*": ["shared/*"],
+      "widgets": ["widgets"]
+    },
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

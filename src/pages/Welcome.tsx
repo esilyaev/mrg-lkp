@@ -1,6 +1,6 @@
 import AcUnitIcon from '@mui/icons-material/AcUnit'
 import { IconButton } from '@mui/material'
-import { MRSidebar } from '../comps/MRSidebar'
+import { MRSidebar } from '../widgets/MRSidebar'
 
 export const Welcome = () => {
   return (

@@ -1,5 +1,5 @@
 // COMPONENTS
-import { MRSidebar } from '../comps/MRSidebar'
+import { MRSidebar } from '../widgets/MRSidebar'
 import { MRFilterButton } from '../comps/MRFilterButton'
 // MUI
 import Box from '@mui/material/Box'
@@ -8,7 +8,7 @@ import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted'
 
 import { rows } from './mockContracts'
 import { useMemo, useState } from 'react'
-import { ContractsList } from './ContractsList'
+import { ContractsList } from 'widgets/Contracts/ContractsList'
 import { Button } from '@mui/material'
 import { MRHeader } from '../comps/MRHeader'
 // import { useNavigate } from "react-router";
@@ -25,7 +25,7 @@ enum ContractsFilter {
   CLOSE,
 }
 
-export const Contracts = () => {
+export const ContractsPage = () => {
   const [filter, setFilter] = useState(ContractsFilter.ALL)
   const [view, setView] = useState(ViewType.CARD)
   // const navigate = useNavigate();

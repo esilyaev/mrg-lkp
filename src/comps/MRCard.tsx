@@ -3,6 +3,12 @@ import StarIcon from '@mui/icons-material/Star'
 import { IconButton, Typography } from '@mui/material'
 import Box from '@mui/material/Box'
 
+const BadgeColors = {
+  Согласование: 'red',
+  Контроль: 'green',
+  Закрыт: 'white',
+}
+
 export const MRCard = (props: {
   status: string
   title: string
@@ -39,7 +45,7 @@ export const MRCard = (props: {
               sx={{
                 padding: '8px 12px',
                 background: 'rgba(239, 238, 255, 1)',
-                color: 'rgba(110, 70, 220, 1)',
+                color: BadgeColors[props.status],
                 borderRadius: '100px',
               }}
             >

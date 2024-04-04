@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material'
 import { DataGrid, GridColDef } from '@mui/x-data-grid'
-import { MRCard } from '../comps/MRCard'
-import { ViewType } from './Contracts'
+import { MRCard } from '../../comps/MRCard'
+import { ViewType } from '../../pages/ContractsPage'
 
 const columns: GridColDef[] = [
   {
@@ -67,6 +67,8 @@ const columns: GridColDef[] = [
   },
 ]
 
+const flag = false
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const ContractsList = (props: { viewType: ViewType; rows: any[] }) => {
   if (props.viewType === ViewType.CARD) {
@@ -92,10 +94,10 @@ export const ContractsList = (props: { viewType: ViewType; rows: any[] }) => {
             date="12 июня 2023"
           />
         </Grid>
-        <Grid item xs={4} className="grid-list__card card">
+        <Grid item xs={4}>
           <MRCard
             status="Согласование"
-            title="Slava 3 оч."
+            title="Slava 3 оч РЕД"
             subtitle="Договор генподряда №333"
             summa="1 000 000.00"
             remain="0"

@@ -1,19 +1,22 @@
 import { Suspense } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Welcome } from './Welcome'
-import { Contracts } from './Contracts'
-import { Manage } from './Manage'
-import { NotFound } from './NotFound'
+import { ContractsPage } from './ContractsPage'
+import { ManagePage } from './ManagePage'
+import { NotFoundPage } from './NotFoundPage'
+import { MainLayout } from './MainLayout'
 
 export const Router = () => {
   return (
     <BrowserRouter>
       <Suspense fallback={'Loading...'}>
         <Routes>
-          <Route path="" element={<Welcome />} />
-          <Route path="/contracts" element={<Contracts />} />
-          <Route path="/manage" element={<Manage />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="" element={<MainLayout />}>
+            <Route path="" element={<Welcome />} />
+            <Route path="/contracts" element={<ContractsPage />} />
+            <Route path="/manage" element={<ManagePage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
         </Routes>
       </Suspense>
     </BrowserRouter>

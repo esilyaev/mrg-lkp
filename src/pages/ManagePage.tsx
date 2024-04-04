@@ -1,9 +1,9 @@
-import { DataGrid, GridColDef, gridClasses } from '@mui/x-data-grid'
+import { DataGridPremium as DataGrid, GridColDef, gridClasses } from '@mui/x-data-grid-premium'
 
 import '../assets/reset.css'
 import '../assets/manage.css'
 // Components
-import { MRSidebar } from '../comps/MRSidebar'
+import { MRSidebar } from '../widgets/MRSidebar'
 import { ManageFilterButton } from '../comps/FilterButton'
 import { MRButton } from '../comps/MRButton'
 
@@ -141,7 +141,7 @@ const columns: GridColDef[] = [
 // ];
 import { rows } from './mockManage'
 
-export const Manage = () => {
+export const ManagePage = () => {
   return (
     <>
       <MRSidebar />
