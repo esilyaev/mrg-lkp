@@ -1,9 +1,8 @@
-import { Box, Typography } from "@mui/material";
-import { MRHeader } from "../comps/MRHeader";
+import { Box, Typography } from '@mui/material'
+import { MRHeader } from '../comps/MRHeader'
 // COMPONENTS
-import { MRSidebar } from "../comps/MRSidebar";
+import { MRSidebar } from '../comps/MRSidebar'
 // MUI
-
 
 export const NotFound = () => {
   return (
@@ -40,11 +39,10 @@ export const NotFound = () => {
                 fontSize: '11px',
                 fontWeight: '700',
               },
-
-
             }}
           >
-            <Typography variant="h2"
+            <Typography
+              variant="h2"
               sx={{
                 fontSize: '16px',
                 lineHeight: '24px',
@@ -54,12 +52,15 @@ export const NotFound = () => {
               В разработке
             </Typography>
 
-            <Typography variant="body1"
+            <Typography
+              variant="body1"
               sx={{
                 fontSize: '14px',
                 lineHeight: '20px',
               }}
-            >Страница временно недоступна</Typography>
+            >
+              Страница временно недоступна
+            </Typography>
           </Box>
 
           <Box
@@ -71,11 +72,8 @@ export const NotFound = () => {
           >
             <img src="/public/img/notfound.svg" alt="Не найдено" />
           </Box>
-
         </Box>
-
-
       </section>
     </>
-  );
-};
+  )
+}

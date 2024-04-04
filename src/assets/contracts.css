@@ -81,7 +81,6 @@
   outline: none;
   background: none;
 
-
   width: 40px;
   height: 40px;
 
@@ -136,9 +135,6 @@
   align-items: center;
   justify-content: center;
 }
-
-
-
 
 .card__bottom {
   z-index: 10;

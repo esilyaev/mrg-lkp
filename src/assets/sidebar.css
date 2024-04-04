@@ -4,13 +4,13 @@
 
   height: 98%;
 
-  background: #F7F9FC;
+  background: #f7f9fc;
   position: fixed;
   overflow: auto;
   z-index: 10;
   width: 64px;
   /* padding: 40px 40px 40px 55px; */
-  transition: .2s;
+  transition: 0.2s;
   box-shadow: 0 0 10px #00000012;
   display: flex;
 
@@ -22,8 +22,8 @@
 }
 
 .sidebar__logo {
-	display: block;
-	margin: 24px 0px;
+  display: block;
+  margin: 24px 0px;
 }
 
 .sidebar__list {
@@ -47,21 +47,18 @@
 }
 
 .sidebar__list-item:hover {
-	background-color: #f5f5f5;
+  background-color: #f5f5f5;
 }
 
 .sidebar__list-item:hover .MuiSvgIcon-root {
-	fill: rgba(117, 75, 233, 1);
+  fill: rgba(117, 75, 233, 1);
 }
 
 .sidebar__list-item:not(:last-child) {
   margin-bottom: 8px;
 }
 
-
 .sidebar__profile {
   margin-top: 10px;
   /* border-top: 1px solid red; */
 }
-
-

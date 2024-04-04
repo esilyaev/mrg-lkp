@@ -1,13 +1,17 @@
-
-
 // MUI
-import StarIcon from '@mui/icons-material/Star';
-import { IconButton, Typography } from "@mui/material";
-import Box from '@mui/material/Box';
+import StarIcon from '@mui/icons-material/Star'
+import { IconButton, Typography } from '@mui/material'
+import Box from '@mui/material/Box'
 
-export const MRCard = (props: { status: string, title: string, subtitle: string, summa: number, remain: number, date: string, }) => (
+export const MRCard = (props: {
+  status: string
+  title: string
+  subtitle: string
+  summa: number
+  remain: number
+  date: string
+}) => (
   <>
-
     <Box
       sx={{
         background: 'rgba(255, 255, 255, 1)',
@@ -16,8 +20,6 @@ export const MRCard = (props: { status: string, title: string, subtitle: string,
       }}
     >
       <article className="card__content">
-
-
         <Box
           sx={{
             backgroundImage: 'url(/img/card-img.webp)',
@@ -33,7 +35,6 @@ export const MRCard = (props: { status: string, title: string, subtitle: string,
               justifyContent: 'space-between',
             }}
           >
-
             <Box
               sx={{
                 padding: '8px 12px',
@@ -41,8 +42,9 @@ export const MRCard = (props: { status: string, title: string, subtitle: string,
                 color: 'rgba(110, 70, 220, 1)',
                 borderRadius: '100px',
               }}
-            >{props.status}</Box>
-
+            >
+              {props.status}
+            </Box>
 
             <Box
               sx={{
@@ -53,56 +55,67 @@ export const MRCard = (props: { status: string, title: string, subtitle: string,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-
               }}
             >
               <IconButton
-                sx={{
-                  // background: 'grey',
-                }}>
+                sx={
+                  {
+                    // background: 'grey',
+                  }
+                }
+              >
                 <StarIcon
                   sx={{
                     fill: 'rgba(117, 75, 233, 1)',
-                  }} />
+                  }}
+                />
               </IconButton>
-
             </Box>
-
           </Box>
-
         </Box>
 
         <Box
           sx={{
             padding: '16px',
-          }}>
-          <Typography variant='h3'
+          }}
+        >
+          <Typography
+            variant="h3"
             sx={{
               fontSize: '16px',
               lineHeight: '24px',
               fontWeight: '500',
             }}
-          >{props.title}</Typography>
-          <Box sx={{
-            fontSize: '14px',
-            lineHeight: '20px',
-            fontWeight: '400',
-          }}>{props.subtitle}</Box>
-          <Box sx={{ marginTop: '16px', }}>
-
-
-            <Box sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              marginBottom: '8px',
-            }}>
+          >
+            {props.title}
+          </Typography>
+          <Box
+            sx={{
+              fontSize: '14px',
+              lineHeight: '20px',
+              fontWeight: '400',
+            }}
+          >
+            {props.subtitle}
+          </Box>
+          <Box sx={{ marginTop: '16px' }}>
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                marginBottom: '8px',
+              }}
+            >
               <Box
                 sx={{
                   fontSize: '14px',
                   lineHeight: '20px',
                   color: 'rgba(42, 41, 46, 1)',
-                }}>Сумма</Box>
+                }}
+              >
+                Сумма
+              </Box>
               <Box
                 sx={{
                   color: 'rgba(107, 106, 114, 1)',
@@ -110,21 +123,25 @@ export const MRCard = (props: { status: string, title: string, subtitle: string,
               >
                 <span>{props.summa}</span>
               </Box>
-
             </Box>
             <Box sx={{}}></Box>
-            <Box sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              marginBottom: '8px',
-            }}>
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                marginBottom: '8px',
+              }}
+            >
               <Box
                 sx={{
                   fontSize: '14px',
                   lineHeight: '20px',
                   color: 'rgba(42, 41, 46, 1)',
-                }}>Остаток</Box>
+                }}
+              >
+                Остаток
+              </Box>
               <Box
                 sx={{
                   color: 'rgba(107, 106, 114, 1)',
@@ -133,18 +150,23 @@ export const MRCard = (props: { status: string, title: string, subtitle: string,
                 <span>{props.remain}</span>
               </Box>
             </Box>
-            <Box sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              marginBottom: '8px',
-            }}>
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                marginBottom: '8px',
+              }}
+            >
               <Box
                 sx={{
                   fontSize: '14px',
                   lineHeight: '20px',
                   color: 'rgba(42, 41, 46, 1)',
-                }}>Дата</Box>
+                }}
+              >
+                Дата
+              </Box>
               <Box
                 sx={{
                   color: 'rgba(107, 106, 114, 1)',
@@ -153,15 +175,9 @@ export const MRCard = (props: { status: string, title: string, subtitle: string,
                 <span>{props.date}</span>
               </Box>
             </Box>
-
-
-
           </Box>
-
         </Box>
       </article>
     </Box>
-
-
   </>
-);
+)

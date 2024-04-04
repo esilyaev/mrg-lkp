@@ -1,17 +1,16 @@
-
 // COMPONENTS
-import { MRSidebar } from "../comps/MRSidebar";
-import { MRFilterButton } from "../comps/MRFilterButton";
+import { MRSidebar } from '../comps/MRSidebar'
+import { MRFilterButton } from '../comps/MRFilterButton'
 // MUI
-import Box from '@mui/material/Box';
-import GridOnIcon from "@mui/icons-material/GridOn";
-import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
+import Box from '@mui/material/Box'
+import GridOnIcon from '@mui/icons-material/GridOn'
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted'
 
-import { rows } from "./mockContracts";
-import { useMemo, useState } from "react";
-import { ContractsList } from "./ContractsList";
-import { Button } from "@mui/material";
-import { MRHeader } from "../comps/MRHeader";
+import { rows } from './mockContracts'
+import { useMemo, useState } from 'react'
+import { ContractsList } from './ContractsList'
+import { Button } from '@mui/material'
+import { MRHeader } from '../comps/MRHeader'
 // import { useNavigate } from "react-router";
 
 export enum ViewType {
@@ -27,46 +26,42 @@ enum ContractsFilter {
 }
 
 export const Contracts = () => {
-  const [filter, setFilter] = useState(ContractsFilter.ALL);
-  const [view, setView] = useState(ViewType.CARD);
+  const [filter, setFilter] = useState(ContractsFilter.ALL)
+  const [view, setView] = useState(ViewType.CARD)
   // const navigate = useNavigate();
   const filteredContracts = useMemo(() => {
     switch (filter) {
       case ContractsFilter.ALL:
-        return rows;
+        return rows
 
       case ContractsFilter.CLOSE:
-        return rows.filter((item) => item.status === "Закрыт");
+        return rows.filter(item => item.status === 'Закрыт')
 
       case ContractsFilter.REVIEW:
-        return rows.filter((item) => item.status === "Согласование");
+        return rows.filter(item => item.status === 'Согласование')
 
       case ContractsFilter.CONTROL:
-        return rows.filter((item) => item.status === "Контроль");
+        return rows.filter(item => item.status === 'Контроль')
 
       default:
-        return rows;
+        return rows
     }
-  }, [filter]);
+  }, [filter])
   return (
     <>
       <MRSidebar />
       <section>
         <Box>
-
-
           <MRHeader title="Контракты" select="Все проекты" />
 
           <Box
             sx={{
-
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
               marginBottom: '24px',
             }}
           >
-
             <Box
               sx={{
                 display: 'flex',
@@ -74,7 +69,6 @@ export const Contracts = () => {
                 borderRadius: '6px',
               }}
             >
-
               <Box
                 sx={{
                   color: '#fff',
@@ -89,7 +83,7 @@ export const Contracts = () => {
                   borderRight: '1px solid rgba(245, 245, 245, 1)',
                 }}
                 onClick={() => {
-                  setFilter(ContractsFilter.ALL);
+                  setFilter(ContractsFilter.ALL)
                 }}
               >
                 <MRFilterButton name="Все проекты" />
@@ -106,7 +100,7 @@ export const Contracts = () => {
                   borderRight: '1px solid rgba(245, 245, 245, 1)',
                 }}
                 onClick={() => {
-                  setFilter(ContractsFilter.REVIEW);
+                  setFilter(ContractsFilter.REVIEW)
                 }}
               >
                 <MRFilterButton name="Согласование" />
@@ -123,7 +117,7 @@ export const Contracts = () => {
                   borderRight: '1px solid rgba(245, 245, 245, 1)',
                 }}
                 onClick={() => {
-                  setFilter(ContractsFilter.CONTROL);
+                  setFilter(ContractsFilter.CONTROL)
                 }}
               >
                 <MRFilterButton name="Контроль" />
@@ -139,7 +133,7 @@ export const Contracts = () => {
                   gap: '5px',
                 }}
                 onClick={() => {
-                  setFilter(ContractsFilter.CLOSE);
+                  setFilter(ContractsFilter.CLOSE)
                 }}
               >
                 <MRFilterButton name="Закрыт" />
@@ -147,7 +141,6 @@ export const Contracts = () => {
             </Box>
 
             <div>
-
               <Button
                 sx={{
                   background: '#fff',
@@ -174,7 +167,6 @@ export const Contracts = () => {
                 </Box>
               </Button>
 
-
               <Button
                 sx={{
                   background: '#fff',
@@ -199,10 +191,8 @@ export const Contracts = () => {
                     }}
                   />
                 </Box>
-
               </Button>
             </div>
-
           </Box>
 
           <ContractsList viewType={view} rows={filteredContracts} />
@@ -212,5 +202,5 @@ export const Contracts = () => {
 
       {/* <MRButton />/ */}
     </>
-  );
-};
+  )
+}

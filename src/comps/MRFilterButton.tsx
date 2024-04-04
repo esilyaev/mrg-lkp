@@ -1,5 +1,5 @@
-import DoneIcon from '@mui/icons-material/Done';
-import { Button } from "@mui/material";
+import DoneIcon from '@mui/icons-material/Done'
+import { Button } from '@mui/material'
 
 export const MRFilterButton = (props: { name: string }) => {
   return (
@@ -23,8 +23,6 @@ export const MRFilterButton = (props: { name: string }) => {
       <DoneIcon />
 
       <span>{props.name}</span>
-
     </Button>
-
-  );
-};
+  )
+}
