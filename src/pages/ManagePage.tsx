@@ -3,9 +3,11 @@ import { DataGridPremium as DataGrid, GridColDef, gridClasses } from '@mui/x-dat
 import '../assets/reset.css'
 import '../assets/manage.css'
 // Components
+import Box from '@mui/material/Box'
 import { MRSidebar } from '../widgets/MRSidebar'
 import { ManageFilterButton } from '../comps/FilterButton'
 import { MRButton } from '../comps/MRButton'
+import { MRHeader } from '../comps/MRHeader'
 
 // Filter
 
@@ -49,7 +51,8 @@ const columns: GridColDef[] = [
   {
     field: 'name',
     headerName: 'Наименование',
-    width: 378,
+    flex: 1,
+    minWidth: 378,
     headerClassName: 'table-headerName',
   },
   {
@@ -67,78 +70,6 @@ const columns: GridColDef[] = [
   },
 ]
 
-// const rows: GridRowsProp = [
-//   {
-//     id: 1,
-//     group: " ",
-//     work_code: "3.2.2.1",
-//     pavilion: "10",
-//     floor: "5 этаж",
-//     name: "Устройство монолитных стен из бетона марки В40",
-//     total: "100",
-//     fact_month: "...",
-//   },
-//   {
-//     id: 2,
-//     group: " ",
-//     work_code: "3.2.2.1",
-//     pavilion: "10",
-//     floor: "5 этаж",
-//     name: "Устройство монолитных стен из бетона марки В40",
-//     total: "100",
-//     fact_month: "...",
-//   },
-//   {
-//     id: 3,
-//     group: " ",
-//     work_code: "3.2.2.1",
-//     pavilion: "10",
-//     floor: "5 этаж",
-//     name: "Устройство монолитных стен из бетона марки В40",
-//     total: "100",
-//     fact_month: "...",
-//   },
-//   {
-//     id: 4,
-//     group: " ",
-//     work_code: "3.2.2.1",
-//     pavilion: "10",
-//     floor: "5 этаж",
-//     name: "Устройство монолитных стен из бетона марки В40",
-//     total: "100",
-//     fact_month: "...",
-//   },
-//   {
-//     id: 5,
-//     group: " ",
-//     work_code: "3.2.2.1",
-//     pavilion: "10",
-//     floor: "5 этаж",
-//     name: "Устройство монолитных стен из бетона марки В40",
-//     total: "100",
-//     fact_month: "...",
-//   },
-//   {
-//     id: 6,
-//     group: " ",
-//     work_code: "3.2.2.1",
-//     pavilion: "10",
-//     floor: "5 этаж",
-//     name: "Устройство монолитных стен из бетона марки В40",
-//     total: "100",
-//     fact_month: "...",
-//   },
-//   {
-//     id: 7,
-//     group: " ",
-//     work_code: "3.2.2.1",
-//     pavilion: "10",
-//     floor: "5 этаж",
-//     name: "Устройство монолитных стен из бетона марки В40",
-//     total: "100",
-//     fact_month: "...",
-//   },
-// ];
 import { rows } from './mockManage'
 
 export const ManagePage = () => {
@@ -146,8 +77,16 @@ export const ManagePage = () => {
     <>
       <MRSidebar />
       <section className="manage">
-        <div className="container manage__container">
-          <div className="manage__filter-panel">
+        <Box>
+          <MRHeader
+            title="Управление контрактом"
+            select="City Bay1 оч./ Договор генподряда №345 от 12.04.2021"
+          />
+          <Box
+            sx={{
+              marginBottom: '32px',
+            }}
+          >
             <ManageFilterButton title="График освоения" startIcon={<TimelineIcon />} />
             <ManageFilterButton title="Объемы" startIcon={<WysiwygIcon />} />
             <ManageFilterButton title="Стоимость" startIcon={<PaymentsOutlinedIcon />} />
@@ -160,10 +99,31 @@ export const ManagePage = () => {
               title="Информация о контракте"
               startIcon={<WorkOutlineOutlinedIcon />}
             />
-          </div>
+          </Box>
 
-          <div className="manage__datepicker_contaienr">
-            <div className="manage__datepicker">
+          <Box
+            sx={{
+              marginBottom: '24px',
+              display: 'flex',
+            }}
+          >
+            <Box
+              sx={{
+                width: '600px',
+                display: 'flex',
+                '& .MuiInputLabel-root': {
+                  transform: 'translate(14px, 11px) scale(0.8);',
+                },
+                '& .MuiFormLabel-filled': {
+                  transform: 'translate(14px, -10px) scale(0.75);',
+                },
+                '& .MuiSvgIcon-root': {
+                  fill: '#5134a3',
+                  width: '16px',
+                  height: '16px',
+                },
+              }}
+            >
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DatePicker
                   label="Начало периода"
@@ -186,22 +146,34 @@ export const ManagePage = () => {
                   }}
                 />
               </LocalizationProvider>
-            </div>
-            <div className="manage__buttom_container">
+            </Box>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'flex-end',
+                width: '100%',
+              }}
+            >
               <MRButton title="Сформировать КС" />
               <MRButton title="Отправить факт за месяц" />
-            </div>
-          </div>
+            </Box>
+          </Box>
 
-          <div style={{ height: 400, width: '100%' }}>
+          <div style={{ display: 'flex', width: '100%' }}>
             <DataGrid
-              className="DataGridStyle"
+              autoPageSize
+              pagination
               rows={rows}
               columns={columns}
+              autoHeight={true}
               getRowClassName={params =>
                 params.indexRelativeToCurrentPage % 2 === 0 ? 'even' : 'odd'
               }
               sx={{
+                backgroundColor: '#ffffff',
+                border: '0px',
+                boxShadow: '0 12px 16px -4px rgba(21, 21, 21, 0.05)',
+                margin: '0px auto',
                 [`& .${gridClasses.cell}:focus, & .${gridClasses.cell}:focus-within`]: {
                   outline: 'none',
                 },
@@ -218,7 +190,7 @@ export const ManagePage = () => {
               }}
             />
           </div>
-        </div>
+        </Box>
       </section>
     </>
   )

@@ -2,9 +2,7 @@
   font-family: 'Grtsk Giga';
 
   src: url('./fonts/GrtskGiga-Regular.eot');
-  src:
-    local('Grtsk Giga Regular'),
-    local('GrtskGiga-Regular'),
+  src: local('Grtsk Giga Regular'), local('GrtskGiga-Regular'),
     url('./fonts/GrtskGiga-Regular.eot?#iefix') format('embedded-opentype'),
     url('./fonts/GrtskGiga-Regular.woff2') format('woff2'),
     url('./fonts/GrtskGiga-Regular.woff') format('woff'),

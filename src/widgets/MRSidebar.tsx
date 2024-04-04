@@ -1,3 +1,5 @@
+import '../assets/sidebar.css'
+
 import HomeIcon from '@mui/icons-material/Home'
 import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork'
 import LabelIcon from '@mui/icons-material/Label'
@@ -5,25 +7,23 @@ import AssignmentIcon from '@mui/icons-material/Assignment'
 import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard'
 import InboxIcon from '@mui/icons-material/Inbox'
 
-// import AcUnitIcon from "@mui/icons-material/AcUnit";
 import { Box, Button, List, ListItem } from '@mui/material'
-
+import { Sidebar } from 'react-pro-sidebar'
+import { useState } from 'react'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import PersonIcon from '@mui/icons-material/Person'
-import { GoToManage } from 'shared/lib/navigation'
 import { useNavigate } from 'react-router-dom'
 
-export const SidebarButton = (props: { icon: React.ReactNode; nav: () => void }) => {
+export const SidebarButton = (props: { title: string; icon: React.ReactNode; nav: () => void }) => {
   return (
     <ListItem
       sx={{
-        width: '48px',
+        width: '100%',
         height: '48px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: '5px',
-        background: 'rgb(219, 219, 219)',
         padding: '0',
         '&:not(:last-child)': {
           marginBottom: '5px',
@@ -33,70 +33,108 @@ export const SidebarButton = (props: { icon: React.ReactNode; nav: () => void })
       <Button
         onClick={props.nav}
         sx={{
-          minWidth: '48px',
+          display: 'flex',
+          justifyContent: 'flex-start',
+          width: '224px',
           height: '100%',
+          textTransform: 'none',
+          color: '#090714',
           '.MuiSvgIcon-root': {
             fill: 'rgba(190, 187, 201, 1)',
+            marginRight: '12px',
+            minWidth: '24px',
           },
         }}
       >
         {props.icon}
+        <div className="sidebar__menu-title">{props.title}</div>
       </Button>
     </ListItem>
   )
 }
-
 export const MRSidebar = () => {
   const navigate = useNavigate()
+  const [collapsed, setCollapsed] = useState(false)
+  const handleToggleSidebar = () => {
+    setCollapsed(!collapsed)
+  }
   return (
-    <>
+    <Sidebar collapsed={collapsed}>
       <Box
         sx={{
-          position: 'fixed',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'space-between',
           padding: '10px 0',
-          width: '64px',
+          width: '240px',
+          backgroundColor: '#ffffff',
           height: '100%',
           top: '0',
           left: '0',
-          background: '#f7f9fc',
           boxShadow: '0 0 10px #00000012',
           overflow: 'auto',
           zIndex: '10',
           transition: '.2s',
         }}
       >
-        <div className="sidebar__top">
+        <Box>
           <a className="sidebar__logo" href="##">
             <img src="/img/mr-logo.svg" width={48} height={21} alt="##" />
           </a>
-
           <List
             sx={{
               marginTop: '24px',
+              '.sidebar__list-item:hover': {
+                backgroundColor: '#f5f5f5',
+              },
             }}
           >
+            <button onClick={handleToggleSidebar}>Toggle Sidebar</button>
             <SidebarButton
               icon={<HomeIcon />}
               nav={() => {
-                navigate('/manage')
+                navigate('/')
               }}
+              title={'Главная страница'}
             />
             <SidebarButton
               icon={<MapsHomeWorkIcon />}
               nav={() => {
                 navigate('/contracts')
               }}
+              title={'Контракты'}
             />
-            <SidebarButton icon={<LabelIcon />} nav={() => {}} />
-            <SidebarButton icon={<AssignmentIcon />} nav={() => {}} />
-            <SidebarButton icon={<SpaceDashboardIcon />} nav={() => {}} />
-            <SidebarButton icon={<InboxIcon />} nav={() => {}} />
+            <SidebarButton
+              icon={<LabelIcon />}
+              nav={() => {
+                navigate('/manage')
+              }}
+              title={'Управление контрактом'}
+            />
+            <SidebarButton
+              icon={<AssignmentIcon />}
+              nav={() => {
+                navigate('/documentation')
+              }}
+              title={'Документация проекта'}
+            />
+            <SidebarButton
+              icon={<SpaceDashboardIcon />}
+              nav={() => {
+                navigate('/accounting')
+              }}
+              title={'Отчетность по СК'}
+            />
+            <SidebarButton
+              icon={<InboxIcon />}
+              nav={() => {
+                navigate('/cooperation')
+              }}
+              title={'Взаимодействие'}
+            />
           </List>
-        </div>
+        </Box>
 
         <Box
           sx={{
@@ -107,11 +145,11 @@ export const MRSidebar = () => {
         >
           <Box
             sx={{
-              width: '48px',
+              width: '224px',
               height: '48px',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center',
+              justifyContent: 'flex-start',
               borderRadius: '5px',
               background: 'rgb(219, 219, 219)',
             }}
@@ -121,16 +159,19 @@ export const MRSidebar = () => {
               sx={{
                 minWidth: '48px',
                 height: '100%',
+                textTransform: 'none',
+                color: '#090714',
               }}
             >
               <NotificationsIcon
                 sx={{
                   fill: 'rgba(9,7,20, 1)',
-
-                  width: '32px',
-                  height: '32px',
+                  marginRight: '12px',
+                  width: '24px',
+                  height: '24px',
                 }}
               />
+              Уведомления
             </Button>
           </Box>
 
@@ -142,21 +183,28 @@ export const MRSidebar = () => {
             <Button
               onClick={function () {}}
               sx={{
-                minWidth: '40px',
-                height: '40px',
-                borderRadius: '100%',
-                background: 'rgba(216, 215, 255, 1)',
+                width: '224px',
+                display: 'flex',
+                justifyContent: 'flex-start',
+                textTransform: 'none',
+                color: '#090714',
               }}
             >
               <PersonIcon
                 sx={{
                   fill: '#fff',
+                  minWidth: '32px',
+                  height: '32px',
+                  borderRadius: '100%',
+                  background: 'rgba(216, 215, 255, 1)',
+                  marginRight: '8px',
                 }}
               />
+              Фамилия Имя
             </Button>
           </Box>
         </Box>
       </Box>
-    </>
+    </Sidebar>
   )
 }

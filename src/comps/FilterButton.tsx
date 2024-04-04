@@ -5,8 +5,9 @@ export const ManageFilterButton = (props: { title: string; startIcon: React.Reac
     <Button
       sx={{
         background: 'white',
+		height: '40px',
         fontSize: '13px',
-        padding: '6px 12px',
+        padding: '6px 14px',
         textTransform: 'none',
         margin: '0px 8px 0px 0px',
         borderColor: 'none',
