@@ -17,8 +17,8 @@ import { useNavigate } from 'react-router-dom'
 export const SidebarButton = (props: { title: string; icon: React.ReactNode; nav: () => void }) => {
   return (
     <ListItem
+      className="sidebar-listitem"
       sx={{
-        width: '1001%',
         height: '48px',
         display: 'flex',
         alignItems: 'center',
@@ -36,13 +36,11 @@ export const SidebarButton = (props: { title: string; icon: React.ReactNode; nav
         sx={{
           display: 'flex',
           justifyContent: 'flex-start',
-          width: '224px',
           height: '100%',
           textTransform: 'none',
           color: '#090714',
           '.MuiSvgIcon-root': {
             fill: 'rgba(190, 187, 201, 1)',
-            marginRight: '12px',
             minWidth: '24px',
           },
         }}
@@ -65,16 +63,21 @@ export const MRSidebar = () => {
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
+          alignItems: 'flex-start',
           justifyContent: 'space-between',
-          padding: '10px 0',
+          padding: '10px 8px',
           width: '240px',
           height: '100%',
           zIndex: '10',
           transition: '.2s',
         }}
       >
-        <Box>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
           <a className="sidebar__logo" href="##">
             <img src="/img/mr-logo.svg" width={48} height={21} alt="##" />
           </a>
