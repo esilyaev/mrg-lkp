@@ -18,7 +18,7 @@ export const SidebarButton = (props: { title: string; icon: React.ReactNode; nav
   return (
     <ListItem
       sx={{
-        width: '100%',
+        width: '1001%',
         height: '48px',
         display: 'flex',
         alignItems: 'center',
