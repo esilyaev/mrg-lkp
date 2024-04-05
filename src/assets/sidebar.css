@@ -27,5 +27,5 @@
 }
 
 div[data-testid='ps-sidebar-container-test-id'] {
-  background-color: #000;
+  background-color: #ccc;
 }
