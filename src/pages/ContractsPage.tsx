@@ -49,7 +49,6 @@ export const ContractsPage = () => {
   }, [filter])
   return (
     <>
-      <MRSidebar />
       <section>
         <Box>
           <MRHeader title="Контракты" select="Все проекты" />

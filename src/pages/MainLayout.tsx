@@ -12,7 +12,6 @@ export const MainLayout = () => {
           paddingBottom: '34px',
           paddingRight: '24px',
           margin: '0 auto',
-          paddingLeft: '88px',
           background: 'rgba(245, 245, 245, 1)',
           color: 'rgba(42, 41, 46, 1)',
         }}

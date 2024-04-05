@@ -31,6 +31,7 @@ export const SidebarButton = (props: { title: string; icon: React.ReactNode; nav
       }}
     >
       <Button
+        className="SidebarButton"
         onClick={props.nav}
         sx={{
           display: 'flex',
@@ -68,12 +69,7 @@ export const MRSidebar = () => {
           justifyContent: 'space-between',
           padding: '10px 0',
           width: '240px',
-          backgroundColor: '#ffffff',
           height: '100%',
-          top: '0',
-          left: '0',
-          boxShadow: '0 0 10px #00000012',
-          overflow: 'auto',
           zIndex: '10',
           transition: '.2s',
         }}
@@ -171,7 +167,7 @@ export const MRSidebar = () => {
                   height: '24px',
                 }}
               />
-              Уведомления
+              <div className="sidebar__menu-title">Уведомления</div>
             </Button>
           </Box>
 
@@ -200,7 +196,7 @@ export const MRSidebar = () => {
                   marginRight: '8px',
                 }}
               />
-              Фамилия Имя
+              <div className="sidebar__menu-title">Фамилия Имя</div>
             </Button>
           </Box>
         </Box>

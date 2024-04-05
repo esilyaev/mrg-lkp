@@ -4,7 +4,6 @@ import '../assets/reset.css'
 import '../assets/manage.css'
 // Components
 import Box from '@mui/material/Box'
-import { MRSidebar } from '../widgets/MRSidebar'
 import { ManageFilterButton } from '../comps/FilterButton'
 import { MRButton } from '../comps/MRButton'
 import { MRHeader } from '../comps/MRHeader'
@@ -75,7 +74,6 @@ import { rows } from './mockManage'
 export const ManagePage = () => {
   return (
     <>
-      <MRSidebar />
       <section className="manage">
         <Box>
           <MRHeader

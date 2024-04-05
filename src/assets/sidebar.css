@@ -5,15 +5,27 @@
 
 .ps-sidebar-root {
   width: 240px;
-  position: fixed;
-  top: 0px;
-  left: 0px;
+  height: 98vh;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin-right: 24px;
 }
 
 .ps-collapsed {
-  width: 64px !important;
+  min-width: 64px !important;
+  width: 64px;
 }
 
 .ps-collapsed .sidebar__menu-title {
   display: none;
+}
+
+.ps-collapsed .SidebarButton {
+  /* width: 64px; */
+  left: 0px;
+  position: relative;
+}
+
+div[data-testid='ps-sidebar-container-test-id'] {
+  background-color: #000;
 }
