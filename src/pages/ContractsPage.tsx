@@ -1,14 +1,15 @@
 // COMPONENTS
 import { MRSidebar } from '../widgets/MRSidebar'
-import { MRFilterButton } from '../comps/MRFilterButton'
+import { MRFilterButton } from '../widgets/Contracts/MRFilterButton'
 // MUI
 import Box from '@mui/material/Box'
+import DoneIcon from '@mui/icons-material/Done'
 import GridOnIcon from '@mui/icons-material/GridOn'
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted'
 
-import { rows } from './mockContracts'
+import { rows } from 'widgets/Contracts/mockContracts'
 import { useMemo, useState } from 'react'
-import { ContractsList } from 'widgets/Contracts/ContractsList'
+import { ContractsList } from '../widgets/Contracts/ContractsList'
 import { Button } from '@mui/material'
 import { MRHeader } from '../comps/MRHeader'
 
@@ -74,7 +75,7 @@ export const ContractsPage = () => {
                   color: '#fff',
                   background: 'rgba(42, 41, 46, 1)',
                   borderRadius: '6px 0px 0px 6px',
-                  minWidth: '110px',
+                  minWidth: '124px',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
@@ -86,12 +87,12 @@ export const ContractsPage = () => {
                   setFilter(ContractsFilter.ALL)
                 }}
               >
-                <MRFilterButton name="Все проекты" />
+                <MRFilterButton name="Все проекты" startIcon={<DoneIcon />} />
               </Box>
               <Box
                 sx={{
                   color: 'rgba(156, 154, 165, 1)',
-                  minWidth: '110px',
+                  minWidth: '124px',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
@@ -103,12 +104,12 @@ export const ContractsPage = () => {
                   setFilter(ContractsFilter.REVIEW)
                 }}
               >
-                <MRFilterButton name="Согласование" />
+                <MRFilterButton name="Согласование" startIcon={<none />}  />
               </Box>
               <Box
                 sx={{
                   color: 'rgba(156, 154, 165, 1)',
-                  minWidth: '110px',
+                  minWidth: '124px',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
@@ -120,12 +121,12 @@ export const ContractsPage = () => {
                   setFilter(ContractsFilter.CONTROL)
                 }}
               >
-                <MRFilterButton name="Контроль" />
+                <MRFilterButton name="Контроль" startIcon={<none />}  />
               </Box>
               <Box
                 sx={{
                   color: 'rgba(156, 154, 165, 1)',
-                  minWidth: '110px',
+                  minWidth: '124px',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
@@ -136,7 +137,7 @@ export const ContractsPage = () => {
                   setFilter(ContractsFilter.CLOSE)
                 }}
               >
-                <MRFilterButton name="Закрыт" />
+                <MRFilterButton name="Закрыт" startIcon={<none />}  />
               </Box>
             </Box>
 

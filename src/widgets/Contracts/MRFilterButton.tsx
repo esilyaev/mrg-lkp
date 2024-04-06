@@ -1,7 +1,7 @@
-import DoneIcon from '@mui/icons-material/Done'
+// import DoneIcon from '@mui/icons-material/Done'
 import { Button } from '@mui/material'
 
-export const MRFilterButton = (props: { name: string }) => {
+export const MRFilterButton = (props: { name: string; startIcon: React.ReactNode }) => {
   return (
     <Button
       variant="outlined"
@@ -10,7 +10,7 @@ export const MRFilterButton = (props: { name: string }) => {
         gap: '5px',
         padding: '10px 12px',
         color: '#cacaca',
-
+        width: '100%',
         outline: 'none',
         border: 'none',
         '&:hover': {
@@ -19,8 +19,9 @@ export const MRFilterButton = (props: { name: string }) => {
           border: 'none',
         },
       }}
+      startIcon={props.startIcon}
     >
-      <DoneIcon />
+      {/* <DoneIcon /> */}
 
       <span>{props.name}</span>
     </Button>

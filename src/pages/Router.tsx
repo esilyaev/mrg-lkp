@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Welcome } from './Welcome'
+import { WelcomePage } from './WelcomePage'
 import { ContractsPage } from './ContractsPage'
 import { ManagePage } from './ManagePage'
 import { NotFoundPage } from './NotFoundPage'
@@ -12,7 +12,7 @@ export const Router = () => {
       <Suspense fallback={'Loading...'}>
         <Routes>
           <Route path="" element={<MainLayout />}>
-            <Route path="" element={<Welcome />} />
+            <Route path="" element={<WelcomePage />} />
             <Route path="/contracts" element={<ContractsPage />} />
             <Route path="/manage" element={<ManagePage />} />
             <Route path="*" element={<NotFoundPage />} />

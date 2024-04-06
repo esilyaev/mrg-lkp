@@ -31,7 +31,7 @@ export const MRCard = (props: {
         overflow: 'hidden',
       }}
     >
-      <article className="card__content">
+      <article>
         <Box
           sx={{
             backgroundImage: 'url(/img/card-img.webp)',
@@ -112,7 +112,6 @@ export const MRCard = (props: {
                 <span>{props.summa}</span>
               </Box>
             </Box>
-            <Box sx={{}}></Box>
             <Box
               sx={{
                 display: 'flex',

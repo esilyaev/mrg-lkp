@@ -21,7 +21,6 @@ export const FavoriteButton = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        transition: '.3s ease',
         '&:hover': {
           background: 'rgba(239, 238, 255, 1)',
         },

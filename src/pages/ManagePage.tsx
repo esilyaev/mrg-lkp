@@ -4,7 +4,7 @@ import { DataGridPremium as DataGrid, GridColDef, gridClasses } from '@mui/x-dat
 import '../assets/manage.css'
 // Components
 import { MRSidebar } from '../widgets/MRSidebar'
-import { ManageFilterButton } from '../comps/FilterButton'
+import { ManageFilterButton } from '../comps/ManageFilterButton'
 import { MRButton } from '../comps/MRButton'
 
 // Filter

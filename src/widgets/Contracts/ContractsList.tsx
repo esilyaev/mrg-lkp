@@ -1,8 +1,8 @@
 import { Box, Grid } from '@mui/material'
 // import { DataGrid, GridColDef } from '@mui/x-data-grid'
-import { DataGridPremium as DataGrid, GridColDef } from '@mui/x-data-grid-premium'
+import { DataGridPremium as DataGrid, GridColDef, gridClasses } from '@mui/x-data-grid-premium'
 // import { DataGridPro, GridActionsCellItem } from '@mui/x-data-grid-pro';
-import { MRCard } from '../../comps/MRCard'
+import { MRCard } from 'widgets/Contracts/MRCard'
 import { ViewType } from '../../pages/ContractsPage'
 
 const CellBackground = {
@@ -165,7 +165,20 @@ export const ContractsList = (props: { viewType: ViewType; rows: any[] }) => {
   } else {
     return (
       <DataGrid
-        sx={{}}
+        sx={{
+          [`& .${gridClasses.cell}:focus, & .${gridClasses.cell}:focus-within`]: {
+            outline: 'none',
+          },
+          [`& .${gridClasses.columnHeader}:focus, & .${gridClasses.columnHeader}:focus-within`]: {
+            outline: 'none',
+          },
+          '& .odd': {
+            backgroundColor: '#fafafa',
+          },
+          '& .MuiDataGrid-scrollbar--horizontal': {
+            backgroundColor: '#000',
+          },
+        }}
         rows={props.rows}
         columns={columns}
         initialState={{ pinnedColumns: { right: ['status'] } }}
