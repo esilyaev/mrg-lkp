@@ -65,7 +65,42 @@ export const MRSidebar = () => {
     setCollapsed(!collapsed)
   }
   return (
-    <>
+    <Box
+      sx={{
+        display: 'flex',
+        '.sidebar__logo': {
+          display: 'flex',
+          position: 'relative',
+          margin: '14px 0px',
+          textDecoration: 'none',
+        },
+        '.ps-sidebar-root': {
+          width: '240px',
+          minWidth: '240px',
+          minHeight: '100vh',
+          backgroundColor: '#ffffff',
+          marginRight: '24px',
+        },
+        '.ps-collapsed': {
+          width: '64px!important',
+          minWidth: '64px!important',
+        },
+        '.ps-collapsed .sidebar__menu-title': {
+          display: 'none',
+        },
+        '.ps-collapsed .sidebar-listitem': {
+          width: '48px',
+          display: 'flex',
+          justifyContent: 'center',
+        },
+        '.ps-collapsed .SidebarButton': {
+          width: '48px',
+          minWidth: '48px',
+          display: 'flex',
+          justifyContent: 'flex-start',
+        },
+      }}
+    >
       <Box
         sx={{
           position: 'absolute',
@@ -199,7 +234,7 @@ export const MRSidebar = () => {
                 className="SidebarButton"
                 onClick={function () {}}
                 sx={{
-                  width: '100%',
+                  width: '220px',
                   height: '100%',
                   textTransform: 'none',
                   color: '#090714',
@@ -255,6 +290,6 @@ export const MRSidebar = () => {
           </Box>
         </Box>
       </Sidebar>
-    </>
+    </Box>
   )
 }

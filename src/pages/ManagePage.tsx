@@ -74,8 +74,19 @@ import { rows } from './mockManage'
 export const ManagePage = () => {
   return (
     <>
-      <section className="manage">
-        <Box>
+      <section>
+        <Box
+          sx={{
+            '.table-headerName': {
+              backgroundColor: '#eaebed',
+              color: '#090714',
+              fontSize: '12px',
+            },
+            '.MuiDataGrid-row [data-field*="fact_month"]': {
+              boxShadow: '-5px 0 10px 0 rgba(0, 0, 0, 0.05);',
+            },
+          }}
+        >
           <MRHeader
             title="Управление контрактом"
             select="City Bay1 оч./ Договор генподряда №345 от 12.04.2021"
