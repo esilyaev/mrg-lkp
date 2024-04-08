@@ -178,6 +178,12 @@ export const ContractsList = (props: { viewType: ViewType; rows: any[] }) => {
           '& .MuiDataGrid-scrollbar--horizontal': {
             backgroundColor: '#000',
           },
+          '& .table-header': {
+            backgroundColor: '#EAEBED',
+          },
+          '& .MuiDataGrid-cell': {
+            background: '#fff',
+          },
         }}
         rows={props.rows}
         columns={columns}

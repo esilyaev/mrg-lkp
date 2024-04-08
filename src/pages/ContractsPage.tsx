@@ -13,6 +13,7 @@ import { ContractsList } from '../widgets/Contracts/ContractsList'
 import { Button } from '@mui/material'
 import { MRHeader } from '../comps/MRHeader'
 
+// eslint-disable-next-line react-refresh/only-export-components
 export enum ViewType {
   CARD,
   TABLE,
@@ -104,7 +105,7 @@ export const ContractsPage = () => {
                   setFilter(ContractsFilter.REVIEW)
                 }}
               >
-                <MRFilterButton name="Согласование" startIcon={<none />}  />
+                <MRFilterButton name="Согласование" startIcon={<none />} />
               </Box>
               <Box
                 sx={{
@@ -121,7 +122,7 @@ export const ContractsPage = () => {
                   setFilter(ContractsFilter.CONTROL)
                 }}
               >
-                <MRFilterButton name="Контроль" startIcon={<none />}  />
+                <MRFilterButton name="Контроль" startIcon={<none />} />
               </Box>
               <Box
                 sx={{
@@ -137,7 +138,7 @@ export const ContractsPage = () => {
                   setFilter(ContractsFilter.CLOSE)
                 }}
               >
-                <MRFilterButton name="Закрыт" startIcon={<none />}  />
+                <MRFilterButton name="Закрыт" startIcon={<none />} />
               </Box>
             </Box>
 

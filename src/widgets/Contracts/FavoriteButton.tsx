@@ -1,10 +1,17 @@
-import { Box, IconButton, ToggleButton } from '@mui/material'
+import { ToggleButton, styled } from '@mui/material'
+import MuiToggleButton from '@mui/material/ToggleButton'
 import StarIcon from '@mui/icons-material/Star'
-import Button from '@mui/material/Button'
 import React from 'react'
 
 export const FavoriteButton = () => {
   const [selected, setSelected] = React.useState(false)
+
+  const ToggleButton = styled(MuiToggleButton)({
+    '&.Mui-selected, &.Mui-selected:hover': {
+      backgroundColor: 'red',
+    },
+  })
+
   return (
     <ToggleButton
       value="check"

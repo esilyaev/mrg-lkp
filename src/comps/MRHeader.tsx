@@ -1,7 +1,9 @@
 // import { Button } from "@mui/material";
 
 import { Box, Typography } from '@mui/material'
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
+// import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
+import MRSelect from './MRSelect';
+// import MRSelect from './MRSelect';
 
 export const MRHeader = (props: { title: string; select: string }) => {
   return (
@@ -18,7 +20,7 @@ export const MRHeader = (props: { title: string; select: string }) => {
           {props.title}
         </Typography>
 
-        <Box
+        {/* <Box
           sx={{
             display: 'flex',
             alignItems: 'center',
@@ -35,7 +37,9 @@ export const MRHeader = (props: { title: string; select: string }) => {
         >
           <span>{props.select}</span>
           <ArrowDropDownIcon />
-        </Box>
+        </Box> */}
+
+        <MRSelect />
       </Box>
     </>
   )
