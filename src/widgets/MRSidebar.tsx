@@ -6,6 +6,8 @@ import LabelIcon from '@mui/icons-material/Label'
 import AssignmentIcon from '@mui/icons-material/Assignment'
 import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard'
 import InboxIcon from '@mui/icons-material/Inbox'
+import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined'
+import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined'
 
 import { Box, Button, List, ListItem } from '@mui/material'
 import { Sidebar } from 'react-pro-sidebar'
@@ -20,6 +22,7 @@ export const SidebarButton = (props: { title: string; icon: React.ReactNode; nav
       className="sidebar-listitem"
       sx={{
         height: '48px',
+        width: '100%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -37,8 +40,10 @@ export const SidebarButton = (props: { title: string; icon: React.ReactNode; nav
           display: 'flex',
           justifyContent: 'flex-start',
           height: '100%',
+          width: '100%',
           textTransform: 'none',
           color: '#090714',
+          paddingLeft: '12px',
           '.MuiSvgIcon-root': {
             fill: 'rgba(190, 187, 201, 1)',
             minWidth: '24px',
@@ -46,7 +51,9 @@ export const SidebarButton = (props: { title: string; icon: React.ReactNode; nav
         }}
       >
         {props.icon}
-        <div className="sidebar__menu-title">{props.title}</div>
+        <Box sx={{ marginLeft: '8px' }} className="sidebar__menu-title">
+          {props.title}
+        </Box>
       </Button>
     </ListItem>
   )
@@ -58,152 +65,196 @@ export const MRSidebar = () => {
     setCollapsed(!collapsed)
   }
   return (
-    <Sidebar collapsed={collapsed}>
+    <>
       <Box
         sx={{
+          position: 'absolute',
           display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-          justifyContent: 'space-between',
-          padding: '10px 8px',
-          width: '240px',
-          height: '100%',
-          zIndex: '10',
-          transition: '.2s',
+          justifyContent: 'center',
+          top: '23px',
+          left: '52px',
+          zIndex: '4',
+          padding: '0px',
+          minWidth: '24px',
+          height: '24px',
+          borderRadius: '100%',
+          background: 'rgba(117, 75, 233, 1)',
+          cursor: 'pointer',
         }}
+        onClick={handleToggleSidebar}
       >
-        <Box
+        <ArrowForwardIosOutlinedIcon
           sx={{
-            display: 'flex',
-            flexDirection: 'column',
+            fill: '#fff',
+            width: '15px',
           }}
-        >
-          <a className="sidebar__logo" href="##">
-            <img src="/img/mr-logo.svg" width={48} height={21} alt="##" />
-          </a>
-          <List
-            sx={{
-              marginTop: '24px',
-              '.sidebar__list-item:hover': {
-                backgroundColor: '#f5f5f5',
-              },
-            }}
-          >
-            <button onClick={handleToggleSidebar}>Toggle Sidebar</button>
-            <SidebarButton
-              icon={<HomeIcon />}
-              nav={() => {
-                navigate('/')
-              }}
-              title={'Главная страница'}
-            />
-            <SidebarButton
-              icon={<MapsHomeWorkIcon />}
-              nav={() => {
-                navigate('/contracts')
-              }}
-              title={'Контракты'}
-            />
-            <SidebarButton
-              icon={<LabelIcon />}
-              nav={() => {
-                navigate('/manage')
-              }}
-              title={'Управление контрактом'}
-            />
-            <SidebarButton
-              icon={<AssignmentIcon />}
-              nav={() => {
-                navigate('/documentation')
-              }}
-              title={'Документация проекта'}
-            />
-            <SidebarButton
-              icon={<SpaceDashboardIcon />}
-              nav={() => {
-                navigate('/accounting')
-              }}
-              title={'Отчетность по СК'}
-            />
-            <SidebarButton
-              icon={<InboxIcon />}
-              nav={() => {
-                navigate('/cooperation')
-              }}
-              title={'Взаимодействие'}
-            />
-          </List>
-        </Box>
-
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <Box
-            sx={{
-              width: '224px',
-              height: '48px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'flex-start',
-              borderRadius: '5px',
-              background: 'rgb(219, 219, 219)',
-            }}
-          >
-            <Button
-              onClick={function () {}}
-              sx={{
-                minWidth: '48px',
-                height: '100%',
-                textTransform: 'none',
-                color: '#090714',
-              }}
-            >
-              <NotificationsIcon
-                sx={{
-                  fill: 'rgba(9,7,20, 1)',
-                  marginRight: '12px',
-                  width: '24px',
-                  height: '24px',
-                }}
-              />
-              <div className="sidebar__menu-title">Уведомления</div>
-            </Button>
-          </Box>
-
-          <Box
-            sx={{
-              marginTop: '10px',
-            }}
-          >
-            <Button
-              onClick={function () {}}
-              sx={{
-                width: '224px',
-                display: 'flex',
-                justifyContent: 'flex-start',
-                textTransform: 'none',
-                color: '#090714',
-              }}
-            >
-              <PersonIcon
-                sx={{
-                  fill: '#fff',
-                  minWidth: '32px',
-                  height: '32px',
-                  borderRadius: '100%',
-                  background: 'rgba(216, 215, 255, 1)',
-                  marginRight: '8px',
-                }}
-              />
-              <div className="sidebar__menu-title">Фамилия Имя</div>
-            </Button>
-          </Box>
-        </Box>
+        />
       </Box>
-    </Sidebar>
+      <Sidebar collapsed={!collapsed}>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+            justifyContent: 'space-between',
+            padding: '10px 8px',
+            width: '240px',
+            height: '100%',
+            zIndex: '10',
+            transition: '.2s',
+          }}
+        >
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+            }}
+          >
+            <a className="sidebar__logo" href="##">
+              <img src="/img/mr-logo.svg" width={48} height={21} alt="##" />
+              <Box
+                sx={{
+                  color: '#090714',
+                  lineHeight: '1',
+                  margin: '2px 0px 0px 8px',
+                  fontSize: '10px',
+                  div: {
+                    color: '#754BE9',
+                  },
+                }}
+              >
+                Личный кабинет <div>подрядчика</div>
+              </Box>
+            </a>
+            <List
+              sx={{
+                marginTop: '24px',
+                '.sidebar__list-item:hover': {
+                  backgroundColor: '#f5f5f5',
+                },
+              }}
+            >
+              <SidebarButton
+                icon={<HomeIcon />}
+                nav={() => {
+                  navigate('/')
+                }}
+                title={'Главная страница'}
+              />
+              <SidebarButton
+                icon={<MapsHomeWorkIcon />}
+                nav={() => {
+                  navigate('/contracts')
+                }}
+                title={'Контракты'}
+              />
+              <SidebarButton
+                icon={<LabelIcon />}
+                nav={() => {
+                  navigate('/manage')
+                }}
+                title={'Управление контрактом'}
+              />
+              <SidebarButton
+                icon={<AssignmentIcon />}
+                nav={() => {
+                  navigate('/documentation')
+                }}
+                title={'Документация проекта'}
+              />
+              <SidebarButton
+                icon={<SpaceDashboardIcon />}
+                nav={() => {
+                  navigate('/accounting')
+                }}
+                title={'Отчетность по СК'}
+              />
+              <SidebarButton
+                icon={<InboxIcon />}
+                nav={() => {
+                  navigate('/cooperation')
+                }}
+                title={'Взаимодействие'}
+              />
+            </List>
+          </Box>
+
+          <Box
+            className="sidebar-listitem"
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+            }}
+          >
+            <Box
+              sx={{
+                height: '48px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'flex-start',
+                borderRadius: '5px',
+              }}
+            >
+              <Button
+                className="SidebarButton"
+                onClick={function () {}}
+                sx={{
+                  width: '100%',
+                  height: '100%',
+                  textTransform: 'none',
+                  color: '#090714',
+                  display: 'flex',
+                  justifyContent: 'flex-start',
+                  paddingLeft: '8px',
+                }}
+              >
+                <NotificationsIcon
+                  sx={{
+                    fill: 'rgba(9,7,20, 1)',
+                    width: '28px',
+                    height: '28px',
+                  }}
+                />
+                <Box sx={{ marginLeft: '8px' }} className="sidebar__menu-title">
+                  Уведомления
+                </Box>
+              </Button>
+            </Box>
+
+            <Box
+              sx={{
+                marginTop: '10px',
+              }}
+            >
+              <Button
+                className="SidebarButton"
+                onClick={function () {}}
+                sx={{
+                  display: 'flex',
+                  width: '100%',
+                  justifyContent: 'flex-start',
+                  textTransform: 'none',
+                  color: '#090714',
+                  paddingLeft: '8px',
+                }}
+              >
+                <PersonIcon
+                  sx={{
+                    fill: '#fff',
+                    minWidth: '32px',
+                    height: '32px',
+                    borderRadius: '100%',
+                    background: 'rgba(216, 215, 255, 1)',
+                  }}
+                />
+                <Box sx={{ marginLeft: '8px' }} className="sidebar__menu-title">
+                  Фамилия Имя
+                </Box>
+              </Button>
+            </Box>
+          </Box>
+        </Box>
+      </Sidebar>
+    </>
   )
 }

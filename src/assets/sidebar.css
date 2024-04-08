@@ -1,11 +1,14 @@
 .sidebar__logo {
-  display: block;
-  margin: 24px 0px;
+  display: flex;
+  position: relative;
+  margin: 14px 0px;
+  text-decoration: none;
 }
 
 .ps-sidebar-root {
-  width: 240px;
-  height: 98vh;
+  width: 240px !important;
+  min-width: 240px !important;
+  min-height: 100vh;
   background-color: #fff;
   box-sizing: border-box;
   margin-right: 24px;
@@ -13,36 +16,26 @@
 }
 
 .ps-collapsed {
+  width: 64px !important;
   min-width: 64px !important;
-  width: 64px;
 }
-
 .ps-collapsed .sidebar__menu-title {
   display: none;
 }
 
-div[data-testid='ps-sidebar-container-test-id'] {
-  background-color: #fff;
+.ps-collapsed .sidebar-listitem {
+  width: 48px;
   display: flex;
-  justify-content: be;
-}
-
-.sidebar-listitem {
-  width: 100%;
+  justify-content: center;
 }
 
 .ps-collapsed .sidebar-listitem {
   width: 48px;
 }
 
-.SidebarButton {
-  width: 100%;
-}
-
 .ps-collapsed .SidebarButton {
-  width: 100%;
-}
-
-.sidebar__menu-title {
-  margin-left: 8px;
+  width: 48px;
+  min-width: 48px;
+  display: flex;
+  justify-content: flex-start;
 }
