@@ -9,7 +9,7 @@ import InboxIcon from '@mui/icons-material/Inbox'
 import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined'
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined'
 
-import { Box, Button, List, ListItem } from '@mui/material'
+import { Box, Button, List, ListItem, SvgIcon } from '@mui/material'
 import { Sidebar } from 'react-pro-sidebar'
 import { useState } from 'react'
 import NotificationsIcon from '@mui/icons-material/Notifications'
@@ -58,12 +58,14 @@ export const SidebarButton = (props: { title: string; icon: React.ReactNode; nav
     </ListItem>
   )
 }
+
 export const MRSidebar = () => {
-  const navigate = useNavigate()
-  const [collapsed, setCollapsed] = useState(false)
-  const handleToggleSidebar = () => {
-    setCollapsed(!collapsed)
+  const [SidebarStatus, setActive] = useState(false)
+  const handleToggle = () => {
+    setActive(!SidebarStatus)
   }
+  const navigate = useNavigate()
+
   return (
     <Box
       sx={{
@@ -81,27 +83,32 @@ export const MRSidebar = () => {
           backgroundColor: '#ffffff',
           marginRight: '24px',
         },
-        '.ps-collapsed': {
+        '.collapsed': {
           width: '64px!important',
           minWidth: '64px!important',
         },
-        '.ps-collapsed .sidebar__menu-title': {
+        '.collapsed .sidebar__menu-title': {
           display: 'none',
         },
-        '.ps-collapsed .sidebar-listitem': {
+        '.collapsed .sidebar-listitem': {
           width: '48px',
           display: 'flex',
           justifyContent: 'center',
         },
-        '.ps-collapsed .SidebarButton': {
+        '.collapsed .SidebarButton': {
           width: '48px',
           minWidth: '48px',
           display: 'flex',
           justifyContent: 'flex-start',
         },
+        '.sidebarTriggerOpen': {
+          left: '228px',
+          transition: '.3s',
+        },
       }}
     >
       <Box
+        className={`${SidebarStatus ? 'sidebarTriggerCollapsed' : 'sidebarTriggerOpen'}`}
         sx={{
           position: 'absolute',
           display: 'flex',
@@ -115,17 +122,20 @@ export const MRSidebar = () => {
           borderRadius: '100%',
           background: 'rgba(117, 75, 233, 1)',
           cursor: 'pointer',
+          transition: '.3s',
         }}
-        onClick={handleToggleSidebar}
+        onClick={handleToggle}
       >
-        <ArrowForwardIosOutlinedIcon
+        <SvgIcon
           sx={{
             fill: '#fff',
             width: '15px',
           }}
+          component={ArrowForwardIosOutlinedIcon}
+          inheritViewBox
         />
       </Box>
-      <Sidebar collapsed={!collapsed}>
+      <Sidebar className={`${SidebarStatus ? 'collapsed' : 'open'}`}>
         <Box
           sx={{
             display: 'flex',
